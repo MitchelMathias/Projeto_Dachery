@@ -1,0 +1,109 @@
+@use "variaveis";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+html, body{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: variaveis.$amarelo;
+    color: white;
+
+}
+
+.destaque{
+    display: inline;
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: variaveis.$azul;
+    color: white;
+}
+
+.accordion-flush{
+    width: 100%;
+    .accordion-item{
+            --bs-accordion-border-color: transparent;
+            background-color: transparent;
+            border-bottom: 1px solid black ;
+        .accordion-header{
+            button{
+                background-color: transparent;
+                font-size: 19px;
+                margin: 10px 0;
+                &:focus{
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+
+main{
+    header{
+        min-height: 100px;
+        background-color: transparent;
+        z-index: 1;
+        article{
+            section{
+                height: 100px;
+                div{
+                    color: variaveis.$azul;
+                }
+            }
+        }
+    }
+    main{
+        section{
+            .texto{
+                text-indent: 2em;
+                color: white;
+                text-align: justify;
+                max-width: 50%;
+                bottom:0%;
+                right: 5%;
+            }
+        }
+        .pag_02{
+            background-color: variaveis.$branco;
+            color: black;
+        }
+        .pag_03, .pag_05{
+            background-color: variaveis.$cinza;
+            div{
+                color: black;
+            }
+        }
+        .pag_04{
+            background-color: variaveis.$branco;
+            color: black;
+            article{
+                .container_divs{
+                    position: relative;
+                    .div1{
+                        background-color: variaveis.$cinza_div;
+                        position: sticky;
+                        top: 5%;
+                    }
+                    .div2{
+                        background-color: variaveis.$azul;
+                        color: white;
+                        .destaque{
+                            background-color: white;
+                            color: black;
+                        }
+                    }
+                    .div3{
+                        
+                    }
+                }
+            }
+        }
+    }
+}

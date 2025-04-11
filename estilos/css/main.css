@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffd504;
+  color: white;
+}
+
+.destaque {
+  display: inline;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: #044993;
+  color: white;
+}
+
+.accordion-flush {
+  width: 100%;
+}
+.accordion-flush .accordion-item {
+  --bs-accordion-border-color: transparent;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+.accordion-flush .accordion-item .accordion-header button {
+  background-color: transparent;
+  font-size: 19px;
+  margin: 10px 0;
+}
+.accordion-flush .accordion-item .accordion-header button:focus {
+  box-shadow: none;
+}
+
+main header {
+  min-height: 100px;
+  background-color: transparent;
+  z-index: 1;
+}
+main header article section {
+  height: 100px;
+}
+main header article section div {
+  color: #044993;
+}
+main main section .texto {
+  text-indent: 2em;
+  color: white;
+  text-align: justify;
+  max-width: 50%;
+  bottom: 0%;
+  right: 5%;
+}
+main main .pag_02 {
+  background-color: #FFFFFF;
+  color: black;
+}
+main main .pag_03, main main .pag_05 {
+  background-color: #e4e4e4;
+}
+main main .pag_03 div, main main .pag_05 div {
+  color: black;
+}
+main main .pag_04 {
+  background-color: #FFFFFF;
+  color: black;
+}
+main main .pag_04 article .container_divs {
+  position: relative;
+}
+main main .pag_04 article .container_divs .div1 {
+  background-color: #e9ecf2;
+  position: sticky;
+  top: 5%;
+}
+main main .pag_04 article .container_divs .div2 {
+  background-color: #044993;
+  color: white;
+}
+main main .pag_04 article .container_divs .div2 .destaque {
+  background-color: white;
+  color: black;
+}
+
+/*# sourceMappingURL=main.css.map */

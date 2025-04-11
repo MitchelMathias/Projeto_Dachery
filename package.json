@@ -1,0 +1,31 @@
+{
+  "name": "projeto_dachery",
+  "version": "1.0.0",
+  "description": "Projeto da Empresa",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MitchelMathias/Projeto_Dachery.git"
+  },
+  "author": "Mitchel Mathias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MitchelMathias/Projeto_Dachery/issues"
+  },
+  "homepage": "https://github.com/MitchelMathias/Projeto_Dachery#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.86.2"
+  },
+  "dependencies": {
+    "gulp-sourcemaps": "^3.0.0"
+  }
+}
