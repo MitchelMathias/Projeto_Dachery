@@ -51,14 +51,6 @@ main header article section {
 main header article section div {
   color: #044993;
 }
-main header article section nav ul li a {
-  color: #e4e4e4;
-}
-main header article section nav ul li a:hover {
-  color: rgb(166, 166, 166);
-  transform: scale(1.9);
-  transition: all 0.3s ease-in-out;
-}
 main main article section {
   color: #333333;
 }

@@ -50,7 +50,6 @@ body{
     }
 }
 
-
 main{
     header{
         min-height: 100px;
@@ -62,17 +61,10 @@ main{
                 div{
                     color: variaveis.$azul;
                 }
-                nav{
+                .navbar{
                     ul{
-                        li{
-                            a{
-                                color: variaveis.$cinza;
-                                &:hover{
-                                    color: rgb(166, 166, 166);
-                                    transform: scale(1.9);
-                                    transition: all 0.3s ease-in-out;
-                                }
-                            }
+                        .nav-item{
+                            
                         }
                     }
                 }
