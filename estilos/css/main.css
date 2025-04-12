@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: cursive;
+  font-family: 'font-family: "Manrope", sans-serif';
 }
 
 html, body {
@@ -50,20 +51,60 @@ main header article section {
 main header article section div {
   color: #044993;
 }
-main main section .texto {
+main header article section nav ul li a {
+  color: #e4e4e4;
+}
+main header article section nav ul li a:hover {
+  color: rgb(166, 166, 166);
+  transform: scale(1.9);
+  transition: all 0.3s ease-in-out;
+}
+main main article section {
+  color: #333333;
+}
+main main article section .texto {
+  background-color: rgba(0, 0, 0, 0.422);
+  padding: 12px;
+  border-radius: 20px;
   text-indent: 2em;
   color: white;
   text-align: justify;
-  max-width: 50%;
-  bottom: 0%;
-  right: 5%;
+  bottom: 0;
+}
+main main article section .texto .estrelas {
+  text-indent: 0;
+  text-align: center;
+}
+main main article .container_img img:hover {
+  transition: all 0.4s ease-in-out;
+  filter: brightness(120%);
+}
+main main article .container_img::after {
+  content: "";
+  position: absolute;
+  border-radius: 30px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 }
 main main .pag_02 {
   background-color: #FFFFFF;
   color: black;
 }
+main main .pag_02 .container_carousel .carousel .carousel-inner .carousel-item div img:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+  filter: brightness(120%);
+}
 main main .pag_03, main main .pag_05 {
   background-color: #e4e4e4;
+}
+main main .pag_03 section .foto_accordion div img:hover, main main .pag_05 section .foto_accordion div img:hover {
+  transform: scale(1.02);
+  transition: all 0.4s ease-in-out;
+  filter: brightness(120%);
 }
 main main .pag_03 div, main main .pag_05 div {
   color: black;
@@ -80,6 +121,11 @@ main main .pag_04 article .container_divs .div1 {
   position: sticky;
   top: 5%;
 }
+main main .pag_04 article .container_divs .div1 div img:hover {
+  transform: scale(1.02);
+  transition: all 0.4s ease-in-out;
+  filter: brightness(120%);
+}
 main main .pag_04 article .container_divs .div2 {
   background-color: #044993;
   color: white;
@@ -88,5 +134,42 @@ main main .pag_04 article .container_divs .div2 .destaque {
   background-color: white;
   color: black;
 }
+main main .pag_05 .accordion-flush .accordion-item {
+  background-color: #e9ecf2;
+  border-radius: 15px;
+  border: none;
+}
+main main .pag_06 {
+  background-color: #044993;
+}
+main main .pag_06 .destaque {
+  background-color: white;
+  color: black;
+}
+main main .pag_06 .container_formulario {
+  background-color: #FFFFFF;
+  color: black;
+}
+main main .pag_06 .contato {
+  color: #e4e4e4;
+}
+main main .pag_06 .endereco a {
+  text-decoration: none;
+  color: #e9ecf2;
+}
+main main .pag_06 .endereco a:hover {
+  color: #ffd504;
+}
 
+footer {
+  color: #333333;
+}
+footer a {
+  text-decoration: none;
+  color: #333333;
+}
+footer a:hover {
+  color: #e4e4e4;
+}
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 /*# sourceMappingURL=main.css.map */

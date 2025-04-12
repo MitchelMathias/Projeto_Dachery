@@ -1,10 +1,17 @@
 @use "variaveis";
 
+@mixin image(){
+    &:hover{
+        transform: scale(1.02);
+        transition: all 0.4s ease-in-out;
+        filter:brightness(120%);
+    }
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: cursive;
+    font-family: variaveis.$fonte;
 }
 
 html, body{
@@ -14,7 +21,6 @@ html, body{
 body{
     background-color: variaveis.$amarelo;
     color: white;
-
 }
 
 .destaque{
@@ -56,26 +62,92 @@ main{
                 div{
                     color: variaveis.$azul;
                 }
+                nav{
+                    ul{
+                        li{
+                            a{
+                                color: variaveis.$cinza;
+                                &:hover{
+                                    color: rgb(166, 166, 166);
+                                    transform: scale(1.9);
+                                    transition: all 0.3s ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
     main{
-        section{
-            .texto{
-                text-indent: 2em;
-                color: white;
-                text-align: justify;
-                max-width: 50%;
-                bottom:0%;
-                right: 5%;
+        article{
+            section{
+                color: #333333;
+                .texto{
+                    background-color: rgba(0, 0, 0, 0.422);
+                    padding: 12px;
+                    border-radius: 20px;
+                    text-indent: 2em;
+                    color: white;
+                    text-align: justify;
+                    bottom: 0;
+                    .estrelas{
+                        text-indent: 0;
+                        text-align: center;
+                    }
+                }
+            }
+            .container_img{
+                img{
+                    &:hover{
+                        transition: all 0.4s ease-in-out;
+                        filter:brightness(120%);
+                    }
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    border-radius: 30px;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 20%;
+                    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+                }
             }
         }
         .pag_02{
             background-color: variaveis.$branco;
             color: black;
+            .container_carousel{
+                .carousel{
+                    .carousel-inner{
+                        .carousel-item{
+                            div{
+                                img{
+                                    &:hover{
+                                        transform: scale(1.1);
+                                        transition: all 0.4s ease-in-out;
+                                        filter:brightness(120%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         .pag_03, .pag_05{
             background-color: variaveis.$cinza;
+            section{
+                .foto_accordion{
+                    div{
+                        img{
+                            @include image;
+                        }
+                    }
+                }
+            }
             div{
                 color: black;
             }
@@ -90,6 +162,11 @@ main{
                         background-color: variaveis.$cinza_div;
                         position: sticky;
                         top: 5%;
+                        div{
+                            img{
+                                @include image;
+                            }
+                        }
                     }
                     .div2{
                         background-color: variaveis.$azul;
@@ -99,11 +176,53 @@ main{
                             color: black;
                         }
                     }
-                    .div3{
-                        
+                }
+            }
+        }
+        .pag_05{
+            .accordion-flush{
+                .accordion-item{
+                    background-color: variaveis.$cinza_div;
+                    border-radius: 15px;
+                    border: none;
+                }
+            }
+        }
+        .pag_06{
+            background-color: variaveis.$azul;
+            .destaque{
+                background-color: white;
+                color: black;
+            }
+            .container_formulario{
+                background-color: variaveis.$branco;
+                color: black;
+            }
+            .contato{
+                color: variaveis.$cinza;
+            }
+            .endereco{
+                a{
+                    text-decoration: none;
+                    color:variaveis.$cinza_div;
+                    &:hover{
+                        color: variaveis.$amarelo;
                     }
                 }
             }
         }
     }
 }
+footer{
+    color: #333333;
+    a{
+        text-decoration: none;
+        color: #333333;
+        &:hover{
+            color: variaveis.$cinza;
+        }
+    }
+}
+
+
+

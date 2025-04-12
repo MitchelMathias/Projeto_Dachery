@@ -9,6 +9,10 @@
     <link rel="shortcut icon" href="imagens/logo.jpg" type="image/x-icon">
     <title>Dachery</title>
 </head>
+<style>
+    /* Corrige o menu expandindo para baixo */
+    
+</style>
 <body>
     <main>
         <header class="position-absolute top-0 w-100">
@@ -18,12 +22,12 @@
                         <h1 class="fw-bold">Dachery</h1>
                     </div>
                     <nav>
-                        <ul class="d-flex justify-content-center align-items-center gap-4 mb- list-unstyled">
-                            <li><a class="text-decoration-none btn btn-primary" href="#">Sobre</a></li>
-                            <li><a class="text-decoration-none btn btn-primary" href="#">Serviços</a></li>
-                            <li><a class="text-decoration-none btn btn-primary" href="#">Nosso Trabalho</a></li>
-                            <li><a class="text-decoration-none btn btn-primary" href="#">Duvidas</a></li>
-                            <li><a class="text-decoration-none btn btn-primary" href="#">Contato</a></li>
+                        <ul class="d-flex justify-content-center align-items-center gap-4 mb- list-unstyled pe-md-3">
+                            <li><a class="text-decoration-none fs-4 fw-bold" href="#sobre">Sobre</a></li>
+                            <li><a class="text-decoration-none fs-4 fw-bold" href="#servico">Serviços</a></li>
+                            <li><a class="text-decoration-none fs-4 fw-bold" href="#trabalho">Nosso Trabalho</a></li>
+                            <li><a class="text-decoration-none fs-4 fw-bold" href="#duvidas">Duvidas</a></li>
+                            <li><a class="text-decoration-none fs-4 fw-bold" href="#contato">Contato</a></li>
                         </ul>
                     </nav>
                 </section>
@@ -32,55 +36,62 @@
         <main class="mt-4 position-relative">
             <article class="container row m-auto pb-5">
                 <section class="col-md-6 d-flex flex-column justify-content-center align-items-start gap-3">
-                    <h1 class="w-75">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla soluta unde facere qui, ipsa ab modi!
+                    <h1 class="w-lg-75 pt-5 mt-5 fs-md-1">
+                        Seu parceiro de confiança em transporte e logística internacional de qualidade.
                     </h1>
-                    <h5 class="w-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                    <button class="btn btn-primary">Work with us</button>
+                    <h5 class="w-md-50">A Dachery oferece excelência em transporte e logística, conectando destinos com eficiência, segurança e compromisso com a qualidade.</h5>
+                    <a href="#contato" class="btn btn-primary mb-4 mb-md-0">Transporte com a gente.</a>
                 </section>
-                <section class="col-md-6 position-relative p-0">
+                <section class="container_img col-md-6 position-relative p-0">
                     <img class="img-fluid rounded-5" src="imagens/cozinha.png" alt="">
                     <div class="texto position-absolute">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem illo deserunt atque assumenda quasi voluptate cum ullam velit inventore, eligendi asperiores minus sit, sunt earum nisi tempora suscipit sed. Sequi!</p>
+                        <p class="estrelas">
+                            <i class="mdi mdi-star fs-5"></i>
+                            <i class="mdi mdi-star fs-5"></i>
+                            <i class="mdi mdi-star fs-5"></i>
+                            <i class="mdi mdi-star fs-5"></i>
+                            <i class="mdi mdi-star fs-5"></i>
+                        </p>
+                        <p>A Dachery transformou a logística da minha empresa. Sua eficiência e compromisso em cada entrega são incomparáveis.</p>
                     </div>
                 </section>
             </article>
-            <article class="pag_02 pt-5 pb-5">
+            <article id="sobre" class="pag_02 pt-5 pb-5">
                 <article class="container row m-auto mt-5 p-5">
                     <section class="col-md-5">
                         <p class="destaque">Sobre</p>
-                        <h1 >home improvement specialists</h1>
+                        <h1 >Especialistas em transporte e logística internacional.</h1>
                     </section>
                     <section class="col-md-7 text-start">
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, libero architecto dolores optio corporis excepturi officiis, sunt similique ullam sed dolor quae sequi aliquam neque voluptatem blanditiis? Repudiandae, odio Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit accusantium ea incidunt iusto exercitationem, vitae impedit voluptas accusamus pariatur tenetur adipisci non velit? Reiciendis vitae ducimus asperiores perferendis obcaecati optio?</h5>
+                        <h5>Bem-vindo à Dachery, sua parceira de confiança em transporte e logística internacional, dedicada a conectar destinos com precisão e segurança. Com anos de experiência no setor, temos orgulho em oferecer soluções eficientes, atendimento de excelência e total comprometimento com cada entrega. Nossa missão é garantir que sua carga chegue ao destino com agilidade, transparência e suporte especializado em cada etapa. Vamos transportar seus objetivos com confiança!</h5>
                     </section>
                 </article>
-                <article>
+                <article class="container_carousel">
                     <section id="carousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="container carousel-inner">
                             <div data-bs-interval="1000" class="carousel-item active">
-                                <div class="d-flex justify-content-between align-items-center gap-5">
+                                <div class="d-flex justify-content-between align-items-center p-5">
                                     <img class="w-25 rounded-5" src="imagens/grafico.png" alt="imagens">
                                     <img class="w-25 rounded-5" src="imagens/grafico.png" alt="imagens">
                                     <img class="w-25 rounded-5" src="imagens/grafico.png" alt="imagens">
                                 </div>
                             </div>
                             <div data-bs-interval="1000" class="carousel-item">
-                                <div class="d-flex justify-content-between align-items-center gap-5">
+                                <div class="d-flex justify-content-between align-items-center p-5">
                                     <img class="w-25 rounded-5" src="imagens/cozinha.png" alt="imagens">
                                     <img class="w-25 rounded-5" src="imagens/cozinha.png" alt="imagens">
                                     <img class="w-25 rounded-5" src="imagens/cozinha.png" alt="imagens">
                                 </div>
                             </div>
                             <div data-bs-interval="1000" class="carousel-item">
-                                <div class="d-flex justify-content-between align-items-center gap-5">
+                                <div class="d-flex justify-content-between align-items-center p-5">
                                     <img class="w-25 rounded-5" src="imagens/piramede.png" alt="imagens">
                                     <img class="w-25 rounded-5" src="imagens/piramede.png" alt="imagens">
                                     <img class="w-25 rounded-5" src="imagens/piramede.png" alt="imagens">
                                 </div>
                             </div>
                             <div data-bs-interval="1000" class="carousel-item">
-                                <div class="d-flex justify-content-between align-items-center gap-5">
+                                <div class="d-flex justify-content-between align-items-center p-5">
                                     <img class="w-25 rounded-5" src="imagens/grafico.png" alt="imagens">
                                     <img class="w-25 rounded-5" src="imagens/grafico.png" alt="imagens">
                                     <img class="w-25 rounded-5" src="imagens/grafico.png" alt="imagens">
@@ -102,34 +113,34 @@
                     </section>
                     <section class="container row m-auto mt-5 p-5">
                         <div class="col-md-3 text-center">
-                            <h2>40</h2>
-                            <h5>Years</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h2>44</h2>
+                            <h5>Anos de Experiência</h5>
+                            <p>Movendo o mundo com logística e transporte de excelência há anos</p>
                         </div>
                         <div class="col-md-3 text-center">
-                            <h2>40</h2>
-                            <h5>Years</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h2>+250</h2>
+                            <h5>Projetos</h5>
+                            <p>Mais de 250 operações concluídas com qualidade, eficiência e total comprometimento com o cliente.</p>
                         </div>
                         <div class="col-md-3 text-center">
-                            <h2>40</h2>
-                            <h5>Years</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h2>+150</h2>
+                            <h5>Profissionais Especializados</h5>
+                            <p>Nossa equipe com mais de 30 especialistas garante excelência em cada operação logística.</p>
                         </div>
                         <div class="col-md-3 text-center">
-                            <h2>40</h2>
-                            <h5>Years</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h2>100%</h2>
+                            <h5>Satisfação dos clientes</h5>
+                            <p>Todos os nossos clientes confiam e aprovam a qualidade dos nossos serviços.</p>
                         </div>
                     </section>
                 </article>
             </article>
-            <article class="pag_03 pb-5 pt-5">
+            <article id="servico" class="pag_03 pb-5 pt-5">
                 <section class="container m-auto">
                     <div class="text-center">
-                        <p class="destaque">Services</p>
-                        <h1>What we do</h1>
-                        <p>Find out which one of our services fit the needs of your project</p>
+                        <p class="destaque">Serviços</p>
+                        <h1>O que fazemos</h1>
+                        <p>Descubra qual dos nossos serviços atende às necessidades do seu projeto.</p>
                     </div>
                     <section class="foto_accordion row m-auto mt-5 align-items-center">
                         <div class="col-md-6">
@@ -140,84 +151,72 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#um" aria-expanded="false" aria-controls="um">
-                                            <i class="mdi mdi-steering me-2"></i> Accordion Item #1
+                                            <i class="mdi mdi-steering me-2"></i> Transporte Internacional
                                         </button>
                                     </h2>
                                     <div id="um" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the
-                                            <code>.accordion-flush</code> class. This is the first item's accordion body.
+                                            Na Dachery, conectamos o seu negócio ao mundo com soluções de transporte internacional personalizadas. Seja por via terrestre ou multimodal, nossa equipe especializada garante eficiência, segurança e agilidade em cada etapa, cuidando dos mínimos detalhes para entregar sua carga com excelência.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dois" aria-expanded="false" aria-controls="dois">
-                                            <i class="mdi mdi-package-variant-closed me-2"></i> Accordion Item #2
+                                            <i class="mdi mdi-package-variant-closed me-2"></i> Logística Personalizada
                                         </button>
                                     </h2>
                                     <div id="dois" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this 
-                                            being filled with some actual content.
+                                            Maximize o potencial do seu negócio com soluções logísticas sob medida. Seja para cargas específicas, armazenagem ou distribuição, a Dachery transforma desafios em soluções eficientes, agregando valor e confiança à sua operação com planejamento estratégico e execução precisa.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tres" aria-expanded="false" aria-controls="tres">
-                                            <i class="mdi mdi-crosshairs-gps me-2"></i> Accordion Item #3
+                                            <i class="mdi mdi-crosshairs-gps me-2"></i> Carga Fracionada e Completa
                                         </button>
                                     </h2>
                                     <div id="tres" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting 
-                                            happening here in terms of content, but just filling up the space to make it look, at least at first 
-                                            glance, a bit more representative of how this would look in a real-world application.
+                                            De pequenos volumes a cargas completas, a Dachery oferece transporte eficiente e seguro, adaptado às necessidades de cada cliente. Cuidamos de tudo — do embarque à entrega — garantindo agilidade, integridade da carga e alto padrão de serviço em cada operação.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#quatro" aria-expanded="false" aria-controls="quatro">
-                                            <i class="mdi mdi-map me-2"></i> Accordion Item #1
+                                            <i class="mdi mdi-map me-2"></i> Expansão de Rotas e Operações
                                         </button>
                                     </h2>
                                     <div id="quatro" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the first item's accordion body.
+                                            Amplie o alcance da sua empresa com a Dachery. Seja para novos mercados, rotas internacionais ou operações complexas, oferecemos soluções logísticas inteligentes e personalizadas, que aumentam a eficiência e o valor do seu negócio sem perder a essência da sua operação.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cinco" aria-expanded="false" aria-controls="cinco">
-                                            <i class="mdi mdi-earth me-2"></i> Accordion Item #2
+                                            <i class="mdi mdi-earth me-2"></i> Restauração de Cargas e Soluções Especiais
                                         </button>
                                     </h2>
                                     <div id="cinco" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this 
-                                            being filled with some actual content.
+                                            Recupere o valor e a integridade das suas operações com o suporte especializado da Dachery. Seja na gestão de avarias, reentregas ou soluções logísticas complexas, cuidamos de cada detalhe para restaurar a confiança, garantir a qualidade e manter sua carga sempre em movimento com segurança.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#seis" aria-expanded="false" aria-controls="seis">
-                                            <i class="mdi mdi-truck me-2"></i> Accordion Item #3
+                                            <i class="mdi mdi-truck me-2"></i> Operações Externas e Fronteiriças
                                         </button>
                                     </h2>
                                     <div id="seis" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting 
-                                            happening here in terms of content, but just filling up the space to make it look, at least at first 
-                                            glance, a bit more representative of how this would look in a real-world application.
+                                            Da coleta à entrega em zonas alfandegárias, a Dachery atua com excelência em operações internacionais. Cuidamos de trâmites aduaneiros, transporte terrestre e integração logística, garantindo que cada etapa além das fronteiras seja segura, eficiente e feita para impressionar.
                                         </div>
                                     </div>
                                 </div>
@@ -226,13 +225,13 @@
                     </section>
                 </section>
             </article>
-            <article class="pag_04 pt-5 pb-5">
+            <article id="trabalho" class="pag_04 pt-5 pb-5">
                 <article class="container m-auto">
                     <section>
                         <div class="text-center">
-                            <p class="destaque">Our work</p>
-                            <h1>Get inspired by our work</h1>
-                            <p>Find out which one of our services fit the needs of your project</p>
+                            <p class="destaque">Nossas entregas</p>
+                            <h1>Inspire-se com nossas operações</h1>
+                            <p>Veja como conectamos empresas ao mundo com eficiência, precisão e compromisso em cada detalhe logístico.</p>
                         </div>
                     </section>
                     <section class="container_divs">
@@ -241,12 +240,12 @@
                                 <img class="img-fluid rounded-5" src="imagens/foto_div1.png" alt="imagem">
                             </div>
                             <div class="col-md-6">
-                                <h1>Modern kitchen refit</h1>
-                                <p>This kitchen transformation brought sleek, modern design and enhanced functionality to our client’s home. We installed custom cabinetry, high-quality worktops, and state-of-the-art appliances, creating a stylish yet practical space perfect for cooking and entertaining. With attention to every detail, we delivered a kitchen that balances aesthetics and usability.</p>
-                                <p class="destaque">Kitchen</p>
-                                <p class="destaque">4 weeks</p>
+                                <h1>Operação logística sob medida</h1>
+                                <p>Essa operação personalizada levou eficiência e modernização à cadeia logística do cliente. Planejamos rotas otimizadas, utilizamos frota dedicada e acompanhamos todo o processo com sistemas de rastreamento em tempo real. O resultado foi uma entrega ágil, segura e ajustada às necessidades específicas da operação — unindo tecnologia, confiabilidade e alto desempenho..</p>
+                                <p class="destaque">Transporte Internacional</p>
+                                <p class="destaque">4 semanas</p>
                                 <p class="mt-5"><i class="mdi mdi-format-quote-open me-2"></i>
-                                    Refit completely transformed our kitchen, making it both beautiful and highly functional. The craftsmanship was outstanding, and the team was professional and communicative throughout. We couldn’t be happier with the result!</p>
+                                    A Dachery revolucionou nossa operação logística, oferecendo um serviço ágil, seguro e totalmente alinhado às nossas necessidades. A equipe demonstrou profissionalismo e transparência em cada etapa. Estamos extremamente satisfeitos com os resultados!</p>
                             </div>
                         </section>
                         <section class="div1 div2 row m-auto border rounded-5 align-items-center mt-5 mb-5">
@@ -254,12 +253,12 @@
                                 <img class="img-fluid rounded-5" src="imagens/foto_div1.png" alt="imagem">
                             </div>
                             <div class="col-md-6">
-                                <h1>Modern kitchen refit</h1>
-                                <p>This kitchen transformation brought sleek, modern design and enhanced functionality to our client’s home. We installed custom cabinetry, high-quality worktops, and state-of-the-art appliances, creating a stylish yet practical space perfect for cooking and entertaining. With attention to every detail, we delivered a kitchen that balances aesthetics and usability.</p>
-                                <p class="destaque">Kitchen</p>
-                                <p class="destaque">4 weeks</p>
+                                <h1>Execução de rota externa personalizada</h1>
+                                <p>Nossa equipe projetou e realizou uma rota logística eficiente e visualmente integrada ao ambiente operacional externo do cliente. Utilizando recursos de alta qualidade, criamos um fluxo contínuo que se adapta ao terreno e melhora o acesso, unindo funcionalidade e apresentação. O resultado é uma solução robusta, bem planejada e alinhada à identidade logística da operação.</p>
+                                <p class="destaque">Operações Externas</p>
+                                <p class="destaque">1 mês</p>
                                 <p class="mt-5"><i class="mdi mdi-format-quote-open me-2"></i>
-                                    Refit completely transformed our kitchen, making it both beautiful and highly functional. The craftsmanship was outstanding, and the team was professional and communicative throughout. We couldn’t be happier with the result!</p>
+                                    A Dachery executou com precisão uma operação externa de média duração, garantindo fluidez no transporte e total controle do processo logístico. Em apenas um mês, entregamos resultados sólidos com agilidade, qualidade e comprometimento em cada etapa.</p>
                             </div>
                         </section>
                         <section class="div1 div3 row m-auto border rounded-5 align-items-center">
@@ -267,115 +266,104 @@
                                 <img class="img-fluid rounded-5" src="imagens/foto_div1.png" alt="imagem">
                             </div>
                             <div class="col-md-6">
-                                <h1>Modern kitchen refit</h1>
-                                <p>This kitchen transformation brought sleek, modern design and enhanced functionality to our client’s home. We installed custom cabinetry, high-quality worktops, and state-of-the-art appliances, creating a stylish yet practical space perfect for cooking and entertaining. With attention to every detail, we delivered a kitchen that balances aesthetics and usability.</p>
-                                <p class="destaque">Kitchen</p>
-                                <p class="destaque">4 weeks</p>
+                                <h1>Operação de modernização logística</h1>
+                                <p>Reestruturamos esse processo logístico com uma abordagem moderna e eficiente, implementando novos fluxos, equipamentos atualizados e controle preciso das etapas. Otimizamos o layout operacional para aproveitar ao máximo os recursos disponíveis, garantindo agilidade, segurança e excelência. O resultado é uma operação renovada, funcional e preparada para atender com alto padrão.</p>
+                                <p class="destaque">Projeto logístico</p>
+                                <p class="destaque">6 semanas</p>
                                 <p class="mt-5"><i class="mdi mdi-format-quote-open me-2"></i>
-                                    Refit completely transformed our kitchen, making it both beautiful and highly functional. The craftsmanship was outstanding, and the team was professional and communicative throughout. We couldn’t be happier with the result!</p>
+                                    Refit turned our outdated bathroom into a stunning modern space. The quality of work was excellent, and the team was incredibly professional from start to finish. We love our new bathroom and would definitely use Refit again!</p>
                             </div>
                         </section>
                     </section>
                 </article>
             </article>
-            <article class="pag_05">
+            <article id="duvidas" class="pag_05 py-5">
                 <article class="container m-auto">
                     <section>
                         <div class="text-center py-5">
-                            <p class="destaque">Testimonials</p>
-                            <h1>Hear from our clients</h1>
-                            <p>Hear from our happy clients about their experience working with Refit and the quality of our craftsmanship.</p>
+                            <p class="destaque">FAQ</p>
+                            <h1>Perguntas Frequentes</h1>
+                            <p>Encontre respostas para as dúvidas mais comuns sobre nossos serviços de transporte internacional.</p>
                         </div>
                     </section>
                     <section class="row m-auto">
                         <div class="col-md-3">
                             <p class="destaque">FAQs</p>
-                            <h1>Answering your questions</h1>
-                            <p>Got more questions? Send us your enquiry below</p>
+                            <h1>Respondendo suas dúvidas</h1>
+                            <p>Ficou com alguma pergunta? Envie sua mensagem para a Dachery abaixo.</p>
+                            <button class="btn btn-primary">Fale conosco</button>
                         </div>
                         <div class="col-md-9">
                             <div class="accordion accordion-flush" id="primeiro_accordion">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#um" aria-expanded="false" aria-controls="um">
-                                            <i class="mdi mdi-steering me-2"></i> Accordion Item #1
+                                            <i class="mdi mdi-steering me-2"></i>Atendem quais regiões?
                                         </button>
                                     </h2>
                                     <div id="um" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the
-                                            <code>.accordion-flush</code> class. This is the first item's accordion body.
+                                            Atuamos em todo o Brasil e também com transporte internacional. Entre em contato conosco para verificar a disponibilidade de atendimento para sua região ou país de destino.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dois" aria-expanded="false" aria-controls="dois">
-                                            <i class="mdi mdi-package-variant-closed me-2"></i> Accordion Item #2
+                                            <i class="mdi mdi-package-variant-closed me-2"></i> Qual o prazo para a realização do transporte?
                                         </button>
                                     </h2>
                                     <div id="dois" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this 
-                                            being filled with some actual content.
+                                            O tempo de transporte varia conforme o destino e o tipo de serviço (nacional ou internacional). Fornecemos prazos claros e detalhados antes do início de cada operação, garantindo transparência e planejamento.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tres" aria-expanded="false" aria-controls="tres">
-                                            <i class="mdi mdi-crosshairs-gps me-2"></i> Accordion Item #3
+                                            <i class="mdi mdi-crosshairs-gps me-2"></i> Vocês oferecem orçamentos gratuitos?
                                         </button>
                                     </h2>
                                     <div id="tres" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting 
-                                            happening here in terms of content, but just filling up the space to make it look, at least at first 
-                                            glance, a bit more representative of how this would look in a real-world application.
+                                            Sim! Oferecemos orçamentos gratuitos e sem compromisso. Após uma avaliação inicial, enviamos um orçamento detalhado para que você saiba exatamente o que esperar do serviço.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#quatro" aria-expanded="false" aria-controls="quatro">
-                                            <i class="mdi mdi-map me-2"></i> Accordion Item #1
+                                            <i class="mdi mdi-map me-2"></i> Preciso de alguma autorização ou documentação especial para o transporte?
                                         </button>
                                     </h2>
                                     <div id="quatro" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the first item's accordion body.
+                                            Dependendo do tipo de carga e do destino, podem ser necessárias documentações específicas ou autorizações alfandegárias. Nossa equipe orienta você em todas as etapas e cuida dos trâmites para garantir um processo seguro e sem complicações.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cinco" aria-expanded="false" aria-controls="cinco">
-                                            <i class="mdi mdi-earth me-2"></i> Accordion Item #2
+                                            <i class="mdi mdi-earth me-2"></i> Os serviços de transporte possuem algum tipo de garantia?
                                         </button>
                                     </h2>
                                     <div id="cinco" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this 
-                                            being filled with some actual content.
+                                            Com certeza! Prezamos pela qualidade e segurança em todas as etapas do transporte. Oferecemos garantias específicas conforme o tipo de serviço contratado — fale conosco para saber os detalhes e condições aplicáveis.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#seis" aria-expanded="false" aria-controls="seis">
-                                            <i class="mdi mdi-truck me-2"></i> Accordion Item #3
+                                            <i class="mdi mdi-truck me-2"></i> Quais são os cuidados que a Dachery Transportes Internacionais toma com os meus produtos durante o transporte?
                                         </button>
                                     </h2>
                                     <div id="seis" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
                                         <div class="accordion-body">
-                                            Placeholder content for this accordion, which is intended to demonstrate the 
-                                            <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting 
-                                            happening here in terms of content, but just filling up the space to make it look, at least at first 
-                                            glance, a bit more representative of how this would look in a real-world application.
+                                            Na Dachery Transportes Internacionais, garantimos a segurança e integridade das suas mercadorias com embalagens adequadas, manuseio especializado e veículos preparados para o transporte internacional. Trabalhamos com a máxima atenção aos detalhes para que seus produtos cheguem ao destino sem danos.
                                         </div>
                                     </div>
                                 </div>
@@ -384,11 +372,76 @@
                     </section>
                 </article>
             </article>
+            <article id="contato" class="pag_06 py-5">
+                <article class="row container m-auto">
+                    <section class="contato col-md-7 pe-md-5 text-md-start text-center">
+                        <p class="destaque">Contato</p>
+                        <h1>Entre em contato</h1>
+                        <p>Para qualquer dúvida ou para explorar sua visão mais a fundo, convidamos você a entrar em contato com nossa equipe profissional utilizando os detalhes abaixo.</p>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p>Espaço</p>
+                                <p>Telefone</p>
+                                <p>E-mail:</p>
+                            </div>
+                            <div class="text-end endereco">
+                                <p>Av. Visc. Ribeiro de Magalhães, 3475 - Santa Tereza, Bagé</p>
+                                <p>(53) 3247-4040</p>
+                                <a href="mailto:dachery@alternet.com.br?subject=Contato&body=Olá,%20gostaria%20de%20saber%20mais%20informações...">dachery@alternet.com.br</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <p class="m-0">Siga nas Redes:</p>
+                            <a href="https://www.instagram.com/dacherytransportes/"><i class="mdi mdi-instagram fs-1" style="color: white;"></i></a>
+                        </div>
+                    </section>
+                    <section class="col-md-5">
+                        <div class="container_formulario p-3 rounded-5">
+                            <form action="#" method="post">
+                                <label class="form-label" for="nome">Nome:</label>
+                                <input class="form-control" type="text" name="nome" id="nome" placeholder="Dachery Transportes">
+                                <label class="form-label" for="email">E-mail:</label>
+                                <input class="form-control" type="email" name="email" id="email" placeholder="dachery@alternet.com.br">
+                                <label class="form-label" for="tel">Telefone:</label>
+                                <input class="form-control" type="tel" name="tel" id="tel">
+                                <label class="form-label" for="mensagem">Mensagem:</label>
+                                <textarea class="form-control" name="mensagem" id="mensagem"></textarea>
+                                <button class="btn btn-primary w-100 my-3" type="submit">Enviar</button>
+                            </form>
+                        </div>
+                    </section>
+                </article>
+            </article>
         </main>
         <footer>
-
+            <article class="container row m-auto py-5">
+                <div class="col-md-8">
+                    <h1>Dachery</h1>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Acesso Rapido:</h5>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="m-2"><a href="#sobre">Sobre</a></p>
+                            <p class="m-2"><a href="#serviço">Serviços</a></p>
+                            <p class="m-2"><a href="#trabalho">Nosso Trabalho</a></p>
+                        </div>
+                        <div>
+                            <p class="m-2"><a href="#duvidas">Duvidas</a></p>
+                            <p class="m-2"><a href="#contato">Contato</a></p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p>© 2025 Dachery. Todos Direitos Reservados</p>
+                    <p>Desenvolvido por <a href="https://www.linkedin.com/in/mitchel-dev/">Mitchel Mathias</a></p>
+                </div>
+            </article>
         </footer>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="lib/bootstrap.bundle.min.js"></script>
 </body>
 </html>
