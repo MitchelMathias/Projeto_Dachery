@@ -1,4 +1,5 @@
 @use "variaveis";
+@use "construcao";
 
 @mixin image(){
     &:hover{
@@ -52,6 +53,26 @@ body{
 }
 
 main{
+    .login{
+        z-index: 2;
+        transition: all 0.7s;
+        &:hover{
+            transform: scale(1.2);
+        }
+        a{
+            cursor: pointer;
+            i{
+                border: 2px solid white;
+                border-radius: 50%;
+                padding: 5px;
+                color: white;
+                transition: all 1s;
+                &:hover{
+                    background-color: variaveis.$azul;
+                }
+            }
+        }
+    }
     header{
         min-height: 100px;
         z-index: 1;
