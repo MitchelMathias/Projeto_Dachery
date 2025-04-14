@@ -272,3 +272,15 @@ footer{
         }
     }
 }
+
+@media screen and (max-width: 778px) {
+    main{
+        main{
+            article{
+                .container_img{
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+}

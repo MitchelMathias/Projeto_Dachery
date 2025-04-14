@@ -214,5 +214,11 @@ footer a {
 footer a:hover {
   color: #e4e4e4;
 }
+
+@media screen and (max-width: 778px) {
+  main main article .container_img {
+    max-width: 90%;
+  }
+}
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 /*# sourceMappingURL=main.css.map */
