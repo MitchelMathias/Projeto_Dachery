@@ -157,7 +157,7 @@ main main .pag_04 article .container_divs {
 main main .pag_04 article .container_divs .div1 {
   background-color: #e9ecf2;
   position: sticky;
-  top: -30%;
+  top: 3%;
 }
 main main .pag_04 article .container_divs .div1 div img {
   max-width: 65%;
@@ -218,6 +218,11 @@ footer a:hover {
 @media screen and (max-width: 778px) {
   main main article .container_img {
     max-width: 90%;
+  }
+}
+@media screen and (max-width: 778px) {
+  body main main .pag_04 .container_divs .div1 {
+    top: -50%;
   }
 }
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");

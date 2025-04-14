@@ -207,7 +207,7 @@ main{
                     .div1{
                         background-color: variaveis.$cinza_div;
                         position: sticky;
-                        top: -30%;
+                        top: 3%;
                         div{
                             img{
                                 @include image;
@@ -279,6 +279,22 @@ footer{
             article{
                 .container_img{
                     max-width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 778px) {
+    body{
+        main{
+            main{
+                .pag_04{
+                    .container_divs{
+                        .div1{
+                            top: -50%;
+                        }
+                    }
                 }
             }
         }
