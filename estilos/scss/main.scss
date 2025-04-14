@@ -60,11 +60,51 @@ main{
                 height: 100px;
                 div{
                     color: variaveis.$azul;
+                    h1{
+                        font-size: 2.3em;
+                    }
                 }
-                .navbar{
+                .nav_tela_grande{
                     ul{
-                        .nav-item{
-                            
+                        li{
+                            overflow: hidden;
+                            a{
+                                padding: 5px;
+                                text-decoration: none;
+                                display:inline-block;
+                                color: variaveis.$cinza;
+                                &:hover{
+                                    color: white;
+                                    transform: scale(1.15);
+                                    transition: all 1s;
+                                }
+                            }
+                        }
+                    }
+                }
+                .nav_tela_pequena{
+                    div{
+                        button{
+                            span{
+                                font-size: 1.5em;
+                            }
+                        }
+                        ul{
+                            min-width: 300px;
+                            background-color:rgba(0, 0, 0, 0.556);
+                            border: none;
+                            backdrop-filter: blur(6px);
+                            -webkit-backdrop-filter: blur(6px);
+                            li{
+                                a{
+                                    padding-left: 20px;
+                                    font-size: 1.4em;
+                                    color: variaveis.$cinza;
+                                    &:hover, &:focus{
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -78,7 +118,7 @@ main{
                 .texto{
                     background-color: rgba(0, 0, 0, 0.422);
                     padding: 12px;
-                    border-radius: 20px;
+                    border-radius: 30px;
                     text-indent: 2em;
                     color: white;
                     text-align: justify;
@@ -104,7 +144,7 @@ main{
                     left: 0;
                     width: 100%;
                     height: 20%;
-                    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+                    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
                 }
             }
         }
@@ -113,6 +153,17 @@ main{
             color: black;
             .container_carousel{
                 .carousel{
+                    button{
+                        span{
+                            background-color:variaveis.$azul;
+                            border-radius: 15px;
+                        }
+                    }
+                    .carousel-indicators{
+                        button{
+                            background-color: variaveis.$azul;
+                        }
+                    }
                     .carousel-inner{
                         .carousel-item{
                             div{
@@ -215,6 +266,3 @@ footer{
         }
     }
 }
-
-
-

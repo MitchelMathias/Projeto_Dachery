@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lib/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos/css/main.css">
     <link rel="shortcut icon" href="imagens/logo.jpg" type="image/x-icon">
     <title>Dachery</title>
@@ -17,33 +18,28 @@
                     <div>
                         <h1 class="fw-bold">Dachery</h1>
                     </div>
-                    <nav class="navbar navbar-collapse justify-content-center justify-content-md-end position-absolute top-15 w-100">
-                        <ul class="list-unstyled m-0">
-                            <li class="nav-item dropdown d-lg-inline">
-                                <a class="" href="#sobre">Sobre</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Lançamentos</a></li>
-                                    <li><a class="dropdown-item" href="#">Promoções</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown d-lg-inline">
-                                <a class="btn dropdown-toggle" data-bs-toggle="dropdown" href="#serviços">Serviços</a>
-                                <ul class="dropdown-menu">
-                                    <li ><a class="dropdown-item" href="#">Lançamentos</a></li>
-                                    <li><a class="dropdown-item" href="#">Pré-Venda</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown d-lg-inline">
-                                <a class="btn dropdown-toggle" data-bs-toggle="dropdown" href="#trabalho">Nosso Trabalho</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Xbox</a></li>
-                                    <li><a class="dropdown-item" href="#">Playstation</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item d-lg-inline">
-                                <a class="btn" href="#">Fale Conosco</a>
-                            </li>
+                    <nav class="nav_tela_grande d-none d-lg-block">
+                        <ul class="d-flex list-unstyled fs-4 m-0">
+                            <li><a class="mx-2" href="#sobre">Sobre</a></li>
+                            <li><a class="mx-2" href="#servico">Serviços</a></li>
+                            <li><a class="mx-2" href="#trabalho">Nossas Entregas</a></li>
+                            <li><a class="mx-2" href="#duvidas">FAQs</a></li>
+                            <li><a class="mx-2" href="#contato">Contato</a></li>
                         </ul>
+                    </nav>
+                    <nav class="nav_tela_pequena d-block d-lg-none me-4">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="bi bi-list"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="me-4" href="#sobre">Sobre</a></li>
+                                <li><a class="me-4" href="#servico">Serviços</a></li>
+                                <li><a class="me-4" href="#trabalho">Nossas Entregas</a></li>
+                                <li><a class="me-4" href="#duvidas">FAQs</a></li>
+                                <li><a class="me-4" href="#contato">Contato</a></li>
+                            </ul>
+                        </div>
                     </nav>
                 </section>
             </article>
@@ -71,8 +67,8 @@
                     </div>
                 </section>
             </article>
-            <article id="sobre" class="pag_02 pt-5 pb-5">
-                <article class="container row m-auto mt-5 p-5">
+            <article id="sobre" class="pag_02 pt-md-5 pb-5">
+                <article class="container row m-auto mt-5 p-md-5 p-4">
                     <section class="col-md-5">
                         <p class="destaque">Sobre</p>
                         <h1 >Especialistas em transporte e logística internacional.</h1>
@@ -85,31 +81,31 @@
                     <section id="carousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="container carousel-inner">
                             <div data-bs-interval="1000" class="carousel-item active">
-                                <div class="d-flex justify-content-between align-items-center p-5">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                <div class="d-flex justify-content-between align-items-center p-5 row">
+                                    <img class="col-lg-3 col-md-6 col-12  rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                    <img class="col-lg-3 col-md-6 col-12 d-md-block d-none  rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                    <img class="col-lg-3 col-md-6 col-12 d-lg-block d-none rounded-5" src="imagens/(1).jpeg" alt="imagens">
                                 </div>
                             </div>
                             <div data-bs-interval="1000" class="carousel-item">
-                                <div class="d-flex justify-content-between align-items-center p-5">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                <div class="d-flex justify-content-between align-items-center p-5 row">
+                                    <img class="col-lg-3 col-md-6 col-12  rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                    <img class="col-lg-3 col-md-6 col-12 d-md-block d-none  rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                    <img class="col-lg-3 col-md-6 col-12 d-lg-block d-none rounded-5" src="imagens/(1).jpeg" alt="imagens">
                                 </div>
                             </div>
                             <div data-bs-interval="1000" class="carousel-item">
-                                <div class="d-flex justify-content-between align-items-center p-5">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                <div class="d-flex justify-content-between align-items-center p-5 row">
+                                    <img class="col-lg-3 col-md-6 col-12  rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                    <img class="col-lg-3 col-md-6 col-12 d-md-block d-none  rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                    <img class="col-lg-3 col-md-6 col-12 d-lg-block d-none rounded-5" src="imagens/(1).jpeg" alt="imagens">
                                 </div>
                             </div>
                             <div data-bs-interval="1000" class="carousel-item">
-                                <div class="d-flex justify-content-between align-items-center p-5">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
-                                    <img class="w-25 rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                <div class="d-flex justify-content-between align-items-center p-5 row">
+                                    <img class="col-lg-3 col-md-6 col-12  rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                    <img class="col-lg-3 col-md-6 col-12 d-md-block d-none  rounded-5" src="imagens/(1).jpeg" alt="imagens">
+                                    <img class="col-lg-3 col-md-6 col-12 d-lg-block d-none rounded-5" src="imagens/(1).jpeg" alt="imagens">
                                 </div>
                             </div>
                         </div>
