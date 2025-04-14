@@ -207,7 +207,7 @@ main{
                     .div1{
                         background-color: variaveis.$cinza_div;
                         position: sticky;
-                        top: 1%;
+                        top: -30%;
                         div{
                             img{
                                 @include image;
