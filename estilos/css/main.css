@@ -103,6 +103,9 @@ main main article section .texto .estrelas {
   text-indent: 0;
   text-align: center;
 }
+main main article .container_img {
+  max-width: 40%;
+}
 main main article .container_img img:hover {
   transition: all 0.4s ease-in-out;
   filter: brightness(120%);

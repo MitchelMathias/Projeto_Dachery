@@ -132,6 +132,8 @@ main{
                 }
             }
             .container_img{
+                max-width: 40%;
+                
                 img{
                     &:hover{
                         transition: all 0.4s ease-in-out;
