@@ -52,22 +52,25 @@ body{
 }
 
 main{
-    .login{
-        z-index: 2;
-        transition: all 0.7s;
-        &:hover{
-            transform: scale(1.2);
-        }
-        a{
-            cursor: pointer;
-            i{
-                border: 2px solid white;
-                border-radius: 50%;
-                padding: 5px;
-                color: white;
-                transition: all 1s;
-                &:hover{
-                    background-color: variaveis.$azul;
+    .section_login{
+        .modal.fade{
+            color: variaveis.$cinza;
+            .modal-dialog{
+                .modal-content{
+                    background-color: #044993c5;;
+                    backdrop-filter: blur(6px);
+                    -webkit-backdrop-filter: blur(6px);
+                    .modal-header{
+                        .modal-title{
+
+                        }
+                        button{
+
+                        }
+                    }
+                    .modal-body{
+
+                    }
                 }
             }
         }
@@ -88,6 +91,9 @@ main{
                     ul{
                         li{
                             overflow: hidden;
+                            .botao_modal{
+                                
+                            }
                             a{
                                 padding: 5px;
                                 text-decoration: none;

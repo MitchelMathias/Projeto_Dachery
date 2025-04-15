@@ -40,25 +40,13 @@ body {
   box-shadow: none;
 }
 
-main .login {
-  z-index: 2;
-  transition: all 0.7s;
+main .section_login .modal.fade {
+  color: #e4e4e4;
 }
-main .login:hover {
-  transform: scale(1.2);
-}
-main .login a {
-  cursor: pointer;
-}
-main .login a i {
-  border: 2px solid white;
-  border-radius: 50%;
-  padding: 5px;
-  color: white;
-  transition: all 1s;
-}
-main .login a i:hover {
-  background-color: #044993;
+main .section_login .modal.fade .modal-dialog .modal-content {
+  background-color: rgba(4, 73, 147, 0.7725490196);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 main header {
   min-height: 100px;

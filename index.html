@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos/css/main.css">
@@ -12,9 +12,27 @@
 </head>
 <body>
     <main>
-        <div class="login d-none d-lg-block position-absolute end-0 me-5 mt-2">
-            <a href="/paginas/construição.html"><i class="bi bi-person-fill fs-3"></i></a>
-        </div>
+        <section class="section_login">
+            <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-2" id="exampleModalLabel">Acesse sua conta:</h1>
+                            <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#" method="post">
+                                <label for="login form-label">Login:</label>
+                                <input type="text" class="form-control" required>
+                                <label for="login form-label">Senha:</label>
+                                <input type="password" class="form-control" required>
+                                <button type="submit" class="btn btn-primary w-100 mt-3">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <header class="position-absolute top-0 w-100">
             <article>
                 <section class="container m-auto d-flex align-items-end justify-content-between w-100 position-relative">
@@ -28,6 +46,11 @@
                             <li><a class="mx-2" href="#trabalho">Nossas Entregas</a></li>
                             <li><a class="mx-2" href="#duvidas">FAQs</a></li>
                             <li><a class="mx-2" href="#contato">Contato</a></li>
+                            <li>
+                                <button type="button" class="botao_modal btn btn-primary position-absolute" data-bs-toggle="modal" data-bs-target="#login">
+                                <i class="bi bi-person-fill fs-4"></i>
+                                </button>
+                            </li>
                         </ul>
                     </nav>
                     <nav class="nav_tela_pequena d-block d-lg-none me-4">
@@ -41,7 +64,7 @@
                                 <li><a class="me-4" href="#trabalho">Nossas Entregas</a></li>
                                 <li><a class="me-4" href="#duvidas">FAQs</a></li>
                                 <li><a class="me-4" href="#contato">Contato</a></li>
-                                <li><a class="me-4" href="paginas/construição.html">login</a></li>
+                                <li><a class="me-4" data-bs-toggle="modal" data-bs-target="#login">login</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -456,6 +479,6 @@
             </article>
         </footer>
     </main>
-    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
