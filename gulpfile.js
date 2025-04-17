@@ -9,7 +9,6 @@ function compilaSass() {
             .pipe(sourcemaps.init())
             .pipe(sass({ outputStyle: 'compressed' })
                 .on('error', sass.logError))
-            .pipe(concat('main.css'))
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest('./estilos/css'))
             .on('end', done)

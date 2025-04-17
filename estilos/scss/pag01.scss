@@ -1,0 +1,90 @@
+@use './outros/variaveis.scss';
+
+@mixin background_div(){
+    background-color: variaveis.$background_divs;
+    border-radius: 15px;
+    border: 5px solid black;
+    color: variaveis.$cinza;
+}
+
+*{
+    font-family: variaveis.$fonte;
+    color: variaveis.$cor_font;
+}
+
+body{
+    background-color: variaveis.$amarelo;
+}
+
+.bi.bi-gear-fill, .bi.bi-person-fill{
+    color: variaveis.$azul;
+}
+
+main{
+    height: 100vh;
+    .lateral{
+        border-right: 1px solid black;
+        background-color: variaveis.$azul;
+        color: variaveis.$cinza;
+        li{
+            padding: 6px 0;
+            transition: all ease 0.4s;
+            &:hover{
+                border-radius: 15px;
+                background-color: variaveis.$background_divs;
+                a{
+                    color: variaveis.$cinza;
+                }
+            }
+            .hovered{
+                padding: 10px;
+                text-decoration: none;
+                color: variaveis.$cinza;
+            }
+        }
+    }
+    .container_principal{
+        background-color: variaveis.$cinza;
+        .container_principal_menor{
+            .container_dashbord{
+                .pedagio{
+                    div{
+                        p{
+                            width: 50%;
+                            margin: auto;
+                            color: variaveis.$cinza;
+                        }
+                    }
+                    div.text-center{
+                        @include background_div();
+                        height: 100%;
+                    }
+                }
+                .container_atas{
+                    .atas_medicas{
+                        @include background_div();
+                        p{
+                            color: variaveis.$cinza;
+                        }
+                    }
+                }
+                .container_dev{
+                    .em_dev{
+                        @include background_div();
+                        p{
+                            color: variaveis.$cinza;
+                        }
+                    }
+                }
+                .container_aniversariantes{
+                    .aniversariantes{
+                        @include background_div();
+                        p{
+                            color: variaveis.$cinza;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
