@@ -1,19 +1,22 @@
-    document.getElementById("formulario").addEventListener("submit", function(e){
-        e.preventDefault();
+document.getElementById("formulario").addEventListener("submit", function(e){
+    e.preventDefault();
 
-        fetch("https://dachery.vercel.app/", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                nome: document.getElementById("nome").value,
-                email: document.getElementById("email").value,
-                telefone: document.getElementById("tel").value,
-                mensagem: document.getElementById("mensagem").value
-            })
+    fetch("/api/email", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            nome: document.getElementById("nome").value,
+            email: document.getElementById("email").value,
+            telefone: document.getElementById("tel").value,
+            mensagem: document.getElementById("mensagem").value
         })
-        .then(() => {
-            alert("Mensagem enviada!");
-            window.location.href = "https://dachery.vercel.app/";
-        })
-        .catch(() => alert("Erro ao enviar!"));
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        document.getElementById("formulario").reset();
+    })
+    .catch(error => {
+        alert("Erro: " + error.message);
     });
+});
