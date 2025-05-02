@@ -11,14 +11,9 @@ document.getElementById("formulario").addEventListener("submit", function(e){
             mensagem: document.getElementById("mensagem").value
         })
     })
-    .then(response => response.json())  // Esperando o JSON de resposta
-    .then(data => {
-        if (data.success) {
-            alert("Mensagem enviada!");
-            window.location.href = "https://dachery.vercel.app/";
-        } else {
-            alert("Falha ao enviar: " + data.message);
-        }
+    .then(() => {
+        alert("Mensagem enviada!");
+        window.location.href = "https://dachery.vercel.app/";
     })
-    .catch((error) => alert("Erro ao enviar! " + error.message));
+    .catch(() => alert("Erro ao enviar!"));
 });
