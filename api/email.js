@@ -1,28 +1,52 @@
-import nodemailer from "nodemailer";
+const express = require('express');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
-export default async (req, res) => {
-    if (req.method !== "POST") return res.status(405).end();
+const app = express();
+const port = 5000;
 
-    const { nome, email, telefone, mensagem } = req.body;
+// Middleware para parsear o corpo da requisição
+app.use(bodyParser.urlencoded({ extended: true }));
 
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: "mitchelmathias2904@gmail.com",
-            pass: "xpfj rspo gjaj ryci"
+// Configuração do transporte para enviar o e-mail
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'mitchelmathias2904@gmail.com',
+        pass: 'xpfj rspo gjaj ryci', // Senha do app (não a senha do Gmail)
+    },
+});
+
+// Função para processar o formulário e enviar o e-mail
+app.post('/enviar', (req, res) => {
+    const { nome, email, tel, mensagem } = req.body;
+
+    // Montar a mensagem
+    const emailContent = `
+        Nova solicitação de contato:
+
+        Nome: ${nome}
+        E-mail: ${email}
+        Telefone: ${tel}
+        Mensagem: ${mensagem}
+    `;
+
+    // Configurar e enviar o e-mail
+    const mailOptions = {
+        from: 'mitchelmathias2904@gmail.com',
+        to: 'mitchelmathias2904@gmail.com',
+        subject: 'Nova Solicitação de Contato - Dachery Transportes',
+        text: emailContent,
+    };
+
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            return res.status(500).send('Erro ao enviar e-mail: ' + err.message);
         }
+        res.status(200).send('E-mail enviado com sucesso!');
     });
+});
 
-    try {
-        await transporter.sendMail({
-            from: email,
-            to: "mitchel.mathias.dev@gmail.com",
-            subject: "Nova mensagem",
-            text: `${nome} - ${telefone}\n\n${mensagem}`
-        });
-
-        res.status(200).json({ ok: true });
-    } catch (err) {
-        res.status(500).json({ ok: false, message: err.message });
-    }
-};
+app.listen(port, () => {
+    console.log(`Server rodando na porta ${port}`);
+});
