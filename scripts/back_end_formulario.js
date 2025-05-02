@@ -6,15 +6,17 @@ document.getElementById("formulario").addEventListener("submit", function(nao_re
     const telefone = document.getElementById("telefone").value
     const mensagem = document.getElementById("mensagem").value
 
+    const dados = `Nome: ${nome} \n
+                    Email: ${email} \n
+                    Telefone: ${telefone} \n
+                    Mensagem: ${mensagem}`
+
     fetch("https://dachery.vercel.app/",{
-        methodo:"post",
+        method:"PoST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: "Nome: " + nome + "\n"
-            + "Email: " + email + "\n"
-            + "Telefone: " + telefone + "\n"
-            + "Mensagem: " + mensagem
+        body: JSON.stringify(dados)
     }).then(function(funcionou){
         window.location.href = "https://dachery.vercel.app/"
         alert("Mensagem enviada com sucesso!")
