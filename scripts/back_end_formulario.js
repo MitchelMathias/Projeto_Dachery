@@ -12,12 +12,12 @@ document.getElementById("formulario").addEventListener("submit", function(nao_re
                     Mensagem: ${mensagem}`
 
     fetch("https://dachery.vercel.app/",{
-        method:"PoST",
+        method:"POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(dados)
-    }).then(function(funcionou){
+        body: JSON.stringify({dados})
+    }).then(function(){
         window.location.href = "https://dachery.vercel.app/"
         alert("Mensagem enviada com sucesso!")
     })
