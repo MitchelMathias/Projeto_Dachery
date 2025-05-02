@@ -6,17 +6,17 @@ document.getElementById("formulario").addEventListener("submit", function(nao_re
     const telefone = document.getElementById("telefone").value
     const mensagem = document.getElementById("mensagem").value
 
-    Email.send({
-        secureToken:"xpfj rspo gjaj ryci",
-        to: "mitchel.mathias.dev@gmail.com",
-        from: email,
-        subject: "Mensagem do Forumulário",
+    fetch("https://dachery.vercel.app/",{
+        methodo:"post",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: "Nome: " + nome + "\n"
             + "Email: " + email + "\n"
             + "Telefone: " + telefone + "\n"
             + "Mensagem: " + mensagem
-    }).then(function(recarrgando_site){
-        window.location.href = "../index.html"
+    }).then(function(funcionou){
+        window.location.href = "https://dachery.vercel.app/"
         alert("Mensagem enviada com sucesso!")
     })
 })
