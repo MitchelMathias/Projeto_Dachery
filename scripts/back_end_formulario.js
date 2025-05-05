@@ -7,7 +7,7 @@ document.getElementById("formulario").addEventListener("submit", async (e) => {
         body: JSON.stringify({
             nome: document.getElementById("nome").value,
             email: document.getElementById("email").value,
-            tel: document.getElementById("suaEmpresa").value,
+            tel: document.getElementById("tel").value,
             mensagem: document.getElementById("mensagem").value
         })
     });

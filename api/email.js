@@ -20,7 +20,7 @@ export default async function handler(req, res) {
                 from: '"Site Dachery" <mitchelmathias2904@gmail.com>',
                 to: 'mitchel.mathias.dev@gmail.com',
                 subject: 'Novo Contato',
-                text: `Nome: ${req.body.nome}\nEmail: ${req.body.email}\nTelefone: ${req.body.telefone}\nMensagem: ${req.body.mensagem}`
+                text: `Nome: ${req.body.nome}\nEmail: ${req.body.email}\nTelefone: ${req.body.tel}\nMensagem: ${req.body.mensagem}`
             });
 
             res.status(200).json({ message: 'E-mail enviado!' });
