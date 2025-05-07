@@ -20,9 +20,13 @@
   },
   "homepage": "https://github.com/MitchelMathias/Projeto_Dachery#readme",
   "devDependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "gulp": "^5.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^6.0.1",
+    "mysql": "^2.18.1",
     "sass": "^1.86.2"
   },
   "dependencies": {
