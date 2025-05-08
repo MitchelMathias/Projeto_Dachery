@@ -24,7 +24,7 @@ db.connect(err => {
 })
 
 // rota que recebe o fetch do front
-app.post('/api/login', (req, res) => {
+app.post('/api/login_mysql', (req, res) => {
     const nome  = req.body.nome    // pega campo "nome" do JSON
     const senha = req.body.senha   // pega campo "senha" do JSON
 
