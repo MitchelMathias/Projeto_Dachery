@@ -1,7 +1,7 @@
 document.getElementById('login').addEventListener('submit', async (e) =>{
     e.preventDefault()
 
-    await fetch('api/login_mysql.js', {
+    await fetch('api/login_mysql', {
         method:'post',
         headers:{
             'Content-type':'application/json'
