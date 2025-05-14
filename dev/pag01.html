@@ -27,7 +27,7 @@
                 </li>
                 <li>
                     <a class="me-4 hovered" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario">Cadastrar Usuário</a>
-                    <section class="section_login">
+                    <section class="surgimento">
                         <div class="modal fade" id="cadastrar_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -41,11 +41,59 @@
                                             <input id="nome" type="text" class="form-control" required>
                                             <label for="ultima_ferias" class="form-label">Ultimas Férias:</label>
                                             <input id="ultima_ferias" type="date" class="form-control" required>
-                                            <label for="aniversario" class="form-label">Aniversário:</label>
+                                            <label for="aniversario" class="form-label">Data de Nacimento:</label>
                                             <input id="aniversario" type="date" class="form-control" required>
-                                            <label for="ultima_ata" class="form-label">Aniversário:</label>
+                                            <label for="ultima_ata" class="form-label">Ultima Ata:</label>
                                             <input id="ultima_ata" type="date" class="form-control" required>
                                             <button id="enviar" type="submit" class="btn btn-primary w-100 mt-3">Enviar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </li>
+                <li>
+                    <a class="me-4 hovered" data-bs-toggle="modal" data-bs-target="#editar_usuario">Editar Usuário</a>
+                    <section class="surgimento">
+                        <div class="modal fade" id="editar_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-2" id="exampleModalLabel">Editar Usuário:</h1>
+                                        <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="consultando" method="post">
+                                            <label for="nome_del" class="form-label">Nome Busca:</label>
+                                            <input id="nome_del" type="text" class="form-control" required>
+                                            <button id="buscar_del" type="submit" class="btn btn-primary w-100 mt-3">Buscar</button>
+                                            <p id="recebe_busca"></p>
+                                            <button id="editando" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario" type="button">Editar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </li>
+                <li>
+                    <a class="me-4 hovered" data-bs-toggle="modal" data-bs-target="#deletar_usuario">Excluir Usuário</a>
+                    <section class="surgimento">
+                        <div class="modal fade" id="deletar_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-2" id="exampleModalLabel">Deletar Usuário:</h1>
+                                        <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="consultando_del" method="post">
+                                            <label for="nome_del_del" class="form-label">Nome Busca:</label>
+                                            <input id="nome_del_del" type="text" class="form-control" required>
+                                            <button id="buscar_del" type="submit" class="btn btn-primary w-100 mt-3">Buscar</button>
+                                            <p id="recebe_busca_del"></p>
+                                            <button id="deletando" class="btn btn-primary w-100" type="button">Deletar</button>
                                         </form>
                                     </div>
                                 </div>
@@ -153,5 +201,6 @@
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/adicionar_editar_excluir.js"></script>
 </body>
 </html>

@@ -24,6 +24,9 @@ main .lateral li {
   padding: 6px 0;
   transition: all ease 0.4s;
 }
+main .lateral li .surgimento .modal .modal-dialog {
+  min-width: 70vw;
+}
 main .lateral li:hover {
   border-radius: 15px;
   background-color: #03376e;

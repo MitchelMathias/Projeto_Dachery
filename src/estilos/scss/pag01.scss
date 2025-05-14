@@ -29,6 +29,13 @@ main{
         li{
             padding: 6px 0;
             transition: all ease 0.4s;
+            .surgimento{
+                .modal{
+                    .modal-dialog{
+                        min-width: 70vw;
+                    }
+                }
+            }
             &:hover{
                 border-radius: 15px;
                 background-color: variaveis.$background_divs;
