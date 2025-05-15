@@ -29,6 +29,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-replace": "^2.0.2",
     "mysql": "^2.18.1",
+    "mysql2": "^3.14.1",
     "nodemailer": "^7.0.3"
   }
 }

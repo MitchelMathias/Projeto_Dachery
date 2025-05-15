@@ -90,7 +90,7 @@ async function consultaDel() {
     }
 }
 
-async function deletando(){
+async function deletando(alertt = true){
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     const ids = [];
@@ -107,7 +107,9 @@ async function deletando(){
     
     const retorno = await response.json()
     if(retorno == 'ok'){
-        alert('Excluido com Sucesso')
+        if(alertt){
+            alert('Usuario Excluido com sucesso')
+        }
         await consulta()
     }
 }
@@ -124,6 +126,7 @@ document.getElementById('cadastrando').addEventListener('submit',async (e)=>{
 document.getElementById('consultando').addEventListener('submit', async (e)=>{
     e.preventDefault()
     await consulta()
+
 })
 
 document.getElementById('consultando_del').addEventListener('submit', async (e)=>{
@@ -159,5 +162,7 @@ document.getElementById('editando').onclick = async () => {
             document.getElementById('ultima_ata').value = ata;
         });
     }
-    await deletando()
+    await deletando(false)
+    
+    
 }

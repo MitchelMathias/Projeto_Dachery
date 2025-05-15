@@ -15,6 +15,7 @@ const connection = mysql.createPool({
     connectionLimit: 10
 });
 
+
 app.post('/email', async (req, res) => {
     try {
         const {nome,email,tel,mensagem} = req.body;
@@ -106,8 +107,5 @@ app.post('/deletando',(req,res)=>{
         }
     })
 })
-
-
-
 
 app.listen(3001, () => console.log('API na porta 3001'));
