@@ -70,16 +70,10 @@ main{
                 .container_atas{
                     .atas_medicas{
                         @include background_div();
+
                         p{
                             color: variaveis.$cinza;
-                        }
-                    }
-                }
-                .container_dev{
-                    .em_dev{
-                        @include background_div();
-                        p{
-                            color: variaveis.$cinza;
+                            margin: 0;
                         }
                     }
                 }
@@ -87,8 +81,19 @@ main{
                     .aniversariantes{
                         @include background_div();
                         p{
+                            margin: 0;
                             color: variaveis.$cinza;
                         }
+                    }
+                }
+                .container_ferias{
+                    h5{
+                        color: variaveis.$cinza;
+                    }
+                    @include background_div();
+                    p{
+                        color: variaveis.$cinza;
+                        margin: 0;
                     }
                 }
             }

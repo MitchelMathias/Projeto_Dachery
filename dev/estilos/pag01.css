@@ -62,15 +62,7 @@ main .container_principal .container_principal_menor .container_dashbord .contai
 }
 main .container_principal .container_principal_menor .container_dashbord .container_atas .atas_medicas p {
   color: #e4e4e4;
-}
-main .container_principal .container_principal_menor .container_dashbord .container_dev .em_dev {
-  background-color: #03376e;
-  border-radius: 15px;
-  border: 5px solid black;
-  color: #e4e4e4;
-}
-main .container_principal .container_principal_menor .container_dashbord .container_dev .em_dev p {
-  color: #e4e4e4;
+  margin: 0;
 }
 main .container_principal .container_principal_menor .container_dashbord .container_aniversariantes .aniversariantes {
   background-color: #03376e;
@@ -79,7 +71,21 @@ main .container_principal .container_principal_menor .container_dashbord .contai
   color: #e4e4e4;
 }
 main .container_principal .container_principal_menor .container_dashbord .container_aniversariantes .aniversariantes p {
+  margin: 0;
   color: #e4e4e4;
+}
+main .container_principal .container_principal_menor .container_dashbord .container_ferias {
+  background-color: #03376e;
+  border-radius: 15px;
+  border: 5px solid black;
+  color: #e4e4e4;
+}
+main .container_principal .container_principal_menor .container_dashbord .container_ferias h5 {
+  color: #e4e4e4;
+}
+main .container_principal .container_principal_menor .container_dashbord .container_ferias p {
+  color: #e4e4e4;
+  margin: 0;
 }
 
 /*# sourceMappingURL=pag01.css.map */

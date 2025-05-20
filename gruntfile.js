@@ -30,10 +30,11 @@ module.exports = (grunt) =>{
             dev:{
                 options:{
                     patterns:[
-                    { match: 'endereco_css', replacement: 'estilos/main.css' },
-                    { match: 'endereco_css2', replacement: 'estilos/pag01.css' },
-                    { match: 'adicionar', replacement: 'scripts/adicionar_editar_excluir.js' }
-                ]
+                        { match: 'endereco_css', replacement: 'estilos/main.css' },
+                        { match: 'endereco_css2', replacement: 'estilos/pag01.css' },
+                        { match: 'adicionar', replacement: 'scripts/adicionar_editar_excluir.js' },
+                        { match: 'front_dados', replacement: 'scripts/front_dados.js' }
+                    ]
                 },
                 files:[{
                     expand:true,

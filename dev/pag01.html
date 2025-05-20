@@ -12,7 +12,8 @@
 </head>
 <body>
     <main class="row m-auto">
-        <section class="lateral col-md-3">
+        <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">Open</button>
+        <section id="menuLateral" class="offcanvas offcanvas-start lateral col-md-2" tabindex="-1">
             <h2 id="nome_usuario" class="mb-5 p-3"><i class="bi bi-person-fill me-2"></i>Dachery</h2>
             <ul class="list-unstyled ps-3">
                 <li><a class="hovered" href="#">Pedagio</a></li>
@@ -103,7 +104,7 @@
                 </li>
             </ul>
         </section>
-        <section class="container_principal col-md-9">
+        <section class="container_principal col-md-10">
             <div class="titulo">
                 <h2 class="p-3"><i class="bi bi-gear-fill me-2"></i>Dashbord</h2>
                 <hr>
@@ -112,62 +113,76 @@
                 <h1>Overview</h1>
                 <p class="text-end">Today</p>
                 <article class="container_dashbord row m-auto">
-                    <section class="container_atas col-md-8 p-2">
-                        <div class="atas_medicas text-center">
-                            <h5>Ata Médica</h5>
-                            <div class="row m-auto">
-                                <div class="ata_vencida col-md-4">
-                                    <p>Ata Vencida</p>
-                                    <div id="recebe_ata_vencida">
-                                        <p>conteudo</p>
-                                    </div>
-                                </div>
-                                <div class="ata_vencida col-md-4">
-                                    <p>Próxima</p>
-                                    <div id="recebe_ata_proxima">
-                                        <p>conteudo</p>
-                                    </div>
-                                </div>
-                                <div class="ata_vencida col-md-4">
-                                    <p>Posterior</p>
-                                    <div id="recebe_ata_posterior">
-                                        <p>conteudo</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="container_dev col-md-4 p-2">
-                        <div class="em_dev text-center">
-                            <h5>Em dev</h5>
-                            <div>
-                                <p>Teste</p>
-                                <div id="recebe_em_dev">
-                                    <p>conteudo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="container_aniversariantes col-md-12 p-2">
+                    <section class="container_aniversariantes col-md-12 g-0">
                         <div class="aniversariantes text-center">
                             <h5>Aniversariantes</h5>
                             <div class="row m-auto">
                                 <div class="ata_vencida col-md-4 ">
                                     <p>Este Mes</p>
-                                    <div id="recebe_niver_atual">
-                                        <p>conteudo</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="mesAtual">conteudo</p>
                                     </div>
                                 </div>
                                 <div class="ata_vencida col-md-4 ">
                                     <p>Próximo</p>
-                                    <div id="recebe_niver_proximo">
-                                        <p>conteudo</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="mesProximo">conteudo</p>
                                     </div>
                                 </div>
                                 <div class="ata_vencida col-md-4 ">
                                     <p>Posterior</p>
-                                    <div id="recebe_niver_posterior">
-                                        <p>conteudo</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="mesPosterior">conteudo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="container_atas col-md-12 py-3 g-0">
+                        <div class="atas_medicas text-center">
+                            <h5>Ata Médica</h5>
+                            <div class="row m-auto">
+                                <div class="ata_vencida col-md-4">
+                                    <p>Ata Vencida</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="vencida">conteudo</p>
+                                    </div>
+                                </div>
+                                <div class="ata_vencida col-md-4">
+                                    <p>Próxima</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="vencemProximoMes">conteudo</p>
+                                    </div>
+                                </div>
+                                <div class="ata_vencida col-md-4">
+                                    <p>Posterior</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="vigentes">conteudo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="container_ferias col-md-12">
+                        <div class="ferias text-center">
+                            <h5>Férias</h5>
+                            <div class="row m-auto">
+                                <div class="ata_vencida col-md-4 ">
+                                    <p>Este Mes</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="feriasAtual">conteudo</p>
+                                    </div>
+                                </div>
+                                <div class="ata_vencida col-md-4 ">
+                                    <p>Próximo</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="feriasProximo">conteudo</p>
+                                    </div>
+                                </div>
+                                <div class="ata_vencida col-md-4 ">
+                                    <p>Posterior</p>
+                                    <div class="my-3">
+                                        <p class="text-center mb-0" id="Posterior">conteudo</p>
                                     </div>
                                 </div>
                             </div>
@@ -179,5 +194,6 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/adicionar_editar_excluir.js"></script>
+    <script src="scripts/front_dados.js"></script>
 </body>
 </html>
