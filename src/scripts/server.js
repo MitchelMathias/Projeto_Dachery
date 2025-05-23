@@ -107,7 +107,6 @@ app.post('/deletando',(req,res)=>{
     })
 })
 
-
 app.get('/aniversariantes', async (req, res) => {
     class Aniversariantes {
         constructor() {
@@ -127,7 +126,7 @@ app.get('/aniversariantes', async (req, res) => {
                     if (erro) return reject(erro);
                     const nomes = resposta.map(p => ({
                         nome:p.nome,
-                        aniversario: `${new Date(p.aniversario).getDate()}/${new Date(p.aniversario).getMonth()+1}`
+                        aniversario: `${new Date(p.aniversario).getDate().toString().padStart(2, '0')}/${(new Date(p.aniversario).getMonth()+1).toString().padStart(2, '0')}/${new Date(p.aniversario).getFullYear()}`
                     }));
                     resolve(nomes);
                 });

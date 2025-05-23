@@ -12,28 +12,43 @@
     color: variaveis.$cor_font;
 }
 
-body{
-    background-color: variaveis.$amarelo;
-}
-
 .bi.bi-gear-fill, .bi.bi-person-fill{
     color: variaveis.$azul;
 }
 
 main{
     height: 100vh;
+    background-color: variaveis.$branco;
     .lateral{
+        .lateral1{
+            color: variaveis.$branco;
+            position: sticky;
+            top: 0;
+            z-index: 1500;
+            h2{
+                a{
+                    text-decoration: none;
+                    color: variaveis.$branco;
+                }
+            }
+        }
         border-right: 1px solid black;
         background-color: variaveis.$azul;
         color: variaveis.$cinza;
         li{
             padding: 6px 0;
             transition: all ease 0.4s;
-            .surgimento{
+                .surgimento{
                 .modal{
                     .modal-dialog{
                         min-width: 70vw;
                     }
+                }
+            }
+            i{
+                color: variaveis.$cinza;
+                &:hover{
+                    color: variaveis.$amarelo;
                 }
             }
             &:hover{
@@ -44,57 +59,69 @@ main{
                 }
             }
             .hovered{
-                padding: 10px;
                 text-decoration: none;
                 color: variaveis.$cinza;
             }
         }
     }
     .container_principal{
-        background-color: variaveis.$cinza;
         .container_principal_menor{
             .container_dashbord{
-                .pedagio{
-                    div{
-                        p{
-                            width: 50%;
-                            margin: auto;
-                            color: variaveis.$cinza;
+                position: relative;
+                .accordion-flush{
+                    width: 100%;
+                    .accordion-item{
+                        --bs-accordion-border-color: transparent;
+                        background-color: transparent;
+                        border-bottom: 1px solid black ;
+                        h1{
+                            color: variaveis.$azul;
+                            font-weight: 900;
+                        }
+                        .accordion-header{
+                            transition: all 0.7s ease;
+                            border-radius: 15px;
+                            button{
+                                background-color: transparent;
+                                font-size: 19px;
+                                margin: 10px 0;
+                                &:focus{
+                                    box-shadow: none;
+                                }
+                            }
+                            button{
+                                &:hover{
+                                    color: variaveis.$azul;
+                                }
+                            }
+                            &:hover{
+                                background-color: variaveis.$amarelo;
+                            }
                         }
                     }
-                    div.text-center{
-                        @include background_div();
-                        height: 100%;
-                    }
                 }
-                .container_atas{
-                    .atas_medicas{
-                        @include background_div();
-
-                        p{
-                            color: variaveis.$cinza;
-                            margin: 0;
-                        }
-                    }
+                .aniversario{
+                    background-color: variaveis.$cinza_div;
+                    position: sticky;
+                    top: -30%;
+                    border: 5px solid variaveis.$azul;
+                    background-color: variaveis.$cinza_div;
+                    border-radius: 20px;
                 }
-                .container_aniversariantes{
-                    .aniversariantes{
-                        @include background_div();
-                        p{
-                            margin: 0;
-                            color: variaveis.$cinza;
-                        }
-                    }
+                .atas{
+                    background-color: variaveis.$cinza_div;
+                    position: sticky;
+                    top: -30%;
+                    border: 5px solid variaveis.$amarelo;
+                    border-radius: 20px;
                 }
-                .container_ferias{
-                    h5{
-                        color: variaveis.$cinza;
-                    }
-                    @include background_div();
-                    p{
-                        color: variaveis.$cinza;
-                        margin: 0;
-                    }
+                .ferias{
+                    background-color: variaveis.$cinza_div;
+                    position: sticky;
+                    top: -30%;
+                    border: 5px solid variaveis.$azul;
+                    background-color: variaveis.$cinza_div;
+                    border-radius: 20px;
                 }
             }
         }
