@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/pag01.css">
+    <link rel="shortcut icon" href="imagens/logo.jpg" type="image/x-icon">
+    <title>Dachery</title>
+</head>
+<body>
+    <main class="row m-auto">
+        <section id="menuLateral" class="lateral col-1 col-lg-2 g-0 ps-lg-3 " tabindex="-1">
+            <div class="lateral1">
+                <h2 id="nome_usuario" class="py-3 d-none d-lg-block"><a href="index.html">Dachery</a></h2>
+                <h2 id="nome_usuario" class="py-3 d-lg-none"><img src="imagens/logo.jpg" class="img-fluid rounded-2 p-1"></h2>
+                <ul class="list-unstyled d-none d-lg-block">
+                    <li><a href="index.html" class="hovered ps-lg-3" >Inicio</a></li>
+                    <li><a href="#AtasMedicasLink" class="hovered ps-lg-3" >Ata Médica</a></li>
+                    <li><a href="#FeriasLink" class="hovered ps-lg-3" >Férias</a></li>
+                    <li><a href="#AniversariantesLink" class="hovered ps-lg-3" >Aniversariantes</a></li>
+                </ul>
+                <h5 class="fw-bold d-none d-lg-block">Pages</h5>
+                <ul class="list-unstyled">
+                    <li class="ps-lg-3 text-center text-lg-start">
+                        <a class="hovered d-none d-lg-block" href="#">Pagina Inicial</a>
+                        <a href="index.html" class="hovered d-lg-none"><i class="bi bi-house-add-fill"></i></a>
+                    </li>
+                    <li class="ps-lg-3 text-center text-lg-start">
+                        <a class="hovered d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario">Cadastrar Usuário</a>
+                        <a class="hovered d-lg-none" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario"><i class="bi bi-person-plus-fill"></i></a>
+                        <section class="surgimento">
+                            <div class="modal fade" id="cadastrar_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-2" id="exampleModalLabel">Cadastrando Usuário:</h1>
+                                            <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="cadastrando" method="post">
+                                                <label for="nome" class="form-label">Nome Completo:</label>
+                                                <input id="nome" type="text" class="form-control" required>
+                                                <label for="ultima_ferias" class="form-label">Ultimas Férias:</label>
+                                                <input id="ultima_ferias" type="date" class="form-control" required>
+                                                <label for="aniversario" class="form-label">Data de Nacimento:</label>
+                                                <input id="aniversario" type="date" class="form-control" required>
+                                                <label for="ultima_ata" class="form-label">Ultima Ata:</label>
+                                                <input id="ultima_ata" type="date" class="form-control" required>
+                                                <button id="enviar" type="submit" class="btn btn-primary w-100 mt-3">Enviar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="ps-lg-3 text-center text-lg-start">
+                        <a class="hovered d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#editar_usuario">Editar Usuário</a>
+                        <a class="hovered d-lg-none" data-bs-toggle="modal" data-bs-target="#editar_usuario"><i class="bi bi-pencil-fill"></i></a>
+                        <section class="surgimento">
+                            <div class="modal fade" id="editar_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-2" id="exampleModalLabel">Editar Usuário:</h1>
+                                            <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="consultando" method="post">
+                                                <label for="nome_del" class="form-label">Nome Busca:</label>
+                                                <input id="nome_del" type="text" class="form-control" required>
+                                                <button id="buscar_del" type="submit" class="btn btn-primary w-100 mt-3">Buscar</button>
+                                                <p id="recebe_busca"></p>
+                                                <button id="editando" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario" type="button">Editar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="ps-lg-3 text-center text-lg-start">
+                        <a class="hovered d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#deletar_usuario">Excluir Usuário</a>
+                        <a class="hovered  d-lg-none" data-bs-toggle="modal" data-bs-target="#deletar_usuario"><i class="bi bi-trash-fill"></i></a>
+                        <section class="surgimento">
+                            <div class="modal fade" id="deletar_usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-2" id="exampleModalLabel">Deletar Usuário:</h1>
+                                            <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="consultando_del" method="post">
+                                                <label for="nome_del_del" class="form-label">Nome Busca:</label>
+                                                <input id="nome_del_del" type="text" class="form-control" required>
+                                                <button id="buscar_del" type="submit" class="btn btn-primary w-100 mt-3">Buscar</button>
+                                                <p id="recebe_busca_del"></p>
+                                                <button id="deletando" class="btn btn-primary w-100" type="button">Deletar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="container_principal col-11 col-lg-10">
+            <div class="titulo">
+                <h2 class="p-3"><i class="bi bi-gear-fill me-2"></i>Dashboard</h2>
+                <hr>
+            </div>
+            <section class="container_principal_menor">
+                <article class="container_dashbord row m-auto">
+                    <section id="AniversariantesLink" class="aniversario foto_accordion row m-auto mt-5 align-items-center my-5 p-3">
+                        <div class="col-md-4">
+                            <img class="img-fluid rounded-5" src="imagens/aniversario.jpeg" alt="entrada">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="accordion accordion-flush" id="primeiro_accordion">
+                                <div class="accordion-item">
+                                    <h1 class="text-center mb-5 mt-5 mt-md-0">Aniversariantes</h1>
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#um" aria-expanded="false" aria-controls="um">
+                                            <i class="bi bi-balloon-fill me-2"></i> Aniversariantes do Mes Atual
+                                        </button>
+                                    </h2>
+                                    <div id="um" class="accordion-collapse collapse show" data-bs-parent="#primeiro_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="mesAtual">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dois" aria-expanded="false" aria-controls="dois">
+                                            <i class="bi bi-balloon-fill me-2"></i> Próximos Aniversariantes
+                                        </button>
+                                    </h2>
+                                    <div id="dois" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="mesProximo">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tres" aria-expanded="false" aria-controls="tres">
+                                            <i class="bi bi-balloon-fill me-2"></i> Aniversariantes do Mes Subsequente ao Proximo
+                                        </button>
+                                    </h2>
+                                    <div id="tres" class="accordion-collapse collapse" data-bs-parent="#primeiro_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="mesPosterior">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="AtasMedicasLink" class="atas foto_accordion row m-auto mt-5 align-items-center my-5 p-3">
+                        <div class="col-md-8">
+                            <div class="accordion accordion-flush" id="segundo_accordion">
+                                <div class="accordion-item">
+                                    <h1 class="text-center mb-5">Controle de Atas Médicas</h1>
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#quatro" aria-expanded="false" aria-controls="quatro">
+                                            <i class="bi bi-clipboard-plus-fill me-2"></i> Atas Vencidas
+                                        </button>
+                                    </h2>
+                                    <div id="quatro" class="accordion-collapse collapse show" data-bs-parent="#segundo_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="vencida">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cinco" aria-expanded="false" aria-controls="cinco">
+                                            <i class="bi bi-clipboard-plus-fill me-2"></i> Próximas Atas a Vencer
+                                        </button>
+                                    </h2>
+                                    <div id="cinco" class="accordion-collapse collapse" data-bs-parent="#segundo_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="vencemProximoMes">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#seis" aria-expanded="false" aria-controls="seis">
+                                            <i class="bi bi-clipboard-plus-fill me-2"></i> Atas com Vencimento Subsequente ao Próximo
+                                        </button>
+                                    </h2>
+                                    <div id="seis" class="accordion-collapse collapse" data-bs-parent="#segundo_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="vigentes">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-5 mt-md-0">
+                            <img class="img-fluid rounded-5" src="imagens/ata.jpeg" alt="entrada">
+                        </div>
+                    </section>
+                    <section id="FeriasLink" class="ferias foto_accordion row m-auto mt-5 align-items-center my-5 p-3">
+                        <div class="col-md-4">
+                            <img class="img-fluid rounded-5" src="imagens/viagem.jpeg" alt="entrada">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="accordion accordion-flush" id="terceiro_accordion">
+                                <div class="accordion-item">
+                                    <h1 class="text-center mb-5 mt-5 mt-md-0">Controle de Férias</h1>
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sete" aria-expanded="false" aria-controls="sete">
+                                            <i class="bi bi-airplane-engines-fill me-2"></i> Elegíveis para férias
+                                        </button>
+                                    </h2>
+                                    <div id="sete" class="accordion-collapse collapse show" data-bs-parent="#terceiro_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="feriasAtual">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#oito" aria-expanded="false" aria-controls="oito">
+                                            <i class="bi bi-airplane-engines-fill me-2"></i> Elegíveis para férias no próximo mês.
+                                        </button>
+                                    </h2>
+                                    <div id="oito" class="accordion-collapse collapse" data-bs-parent="#terceiro_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="feriasProximo">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nove" aria-expanded="false" aria-controls="nove">
+                                            <i class="bi bi-airplane-engines-fill me-2"></i> Férias com Vencimento Subsequente ao Próximo
+                                        </button>
+                                    </h2>
+                                    <div id="nove" class="accordion-collapse collapse" data-bs-parent="#terceiro_accordion">
+                                        <div class="accordion-body">
+                                            <p class="text-center mb-0" id="feriasPosterior">conteudo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </section>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/adicionar_editar_excluir.js"></script>
+    <script src="scripts/front_dados.js"></script>
+</body>
+</html>

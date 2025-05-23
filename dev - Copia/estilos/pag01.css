@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+* {
+  font-family: 'font-family: "Manrope", sans-serif';
+  color: #333333;
+}
+
+.bi.bi-gear-fill, .bi.bi-person-fill {
+  color: #044993;
+}
+
+main {
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+main .lateral {
+  border-right: 1px solid black;
+  background-color: #044993;
+  color: #e4e4e4;
+}
+main .lateral .lateral1 {
+  color: #FFFFFF;
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+}
+main .lateral .lateral1 h2 a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+main .lateral li {
+  padding: 6px 0;
+  transition: all ease 0.4s;
+}
+main .lateral li .surgimento .modal .modal-dialog {
+  min-width: 70vw;
+}
+main .lateral li i {
+  color: #e4e4e4;
+}
+main .lateral li i:hover {
+  color: #ffd504;
+}
+main .lateral li:hover {
+  border-radius: 15px;
+  background-color: #03376e;
+}
+main .lateral li:hover a {
+  color: #e4e4e4;
+}
+main .lateral li .hovered {
+  text-decoration: none;
+  color: #e4e4e4;
+}
+main .container_principal .container_principal_menor .container_dashbord {
+  position: relative;
+}
+main .container_principal .container_principal_menor .container_dashbord .accordion-flush {
+  width: 100%;
+}
+main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item {
+  --bs-accordion-border-color: transparent;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item h1 {
+  color: #044993;
+  font-weight: 900;
+}
+main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item .accordion-header {
+  transition: all 0.7s ease;
+  border-radius: 15px;
+}
+main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item .accordion-header button {
+  background-color: transparent;
+  font-size: 19px;
+  margin: 10px 0;
+}
+main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item .accordion-header button:focus {
+  box-shadow: none;
+}
+main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item .accordion-header button:hover {
+  color: #044993;
+}
+main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item .accordion-header:hover {
+  background-color: #ffd504;
+}
+main .container_principal .container_principal_menor .container_dashbord .aniversario {
+  background-color: #e9ecf2;
+  position: sticky;
+  top: -30%;
+  border: 5px solid #044993;
+  background-color: #e9ecf2;
+  border-radius: 20px;
+}
+main .container_principal .container_principal_menor .container_dashbord .atas {
+  background-color: #e9ecf2;
+  position: sticky;
+  top: -30%;
+  border: 5px solid #044993;
+  border-radius: 20px;
+}
+main .container_principal .container_principal_menor .container_dashbord .ferias {
+  background-color: #e9ecf2;
+  position: sticky;
+  top: -30%;
+  border: 5px solid #044993;
+  background-color: #e9ecf2;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=pag01.css.map */
