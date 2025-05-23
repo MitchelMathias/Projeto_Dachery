@@ -1,5 +1,5 @@
 async function cadastrando(){
-    const response = await fetch('http://localhost:3001/cadastrando',{
+    const response = await fetch('/cadastrando',{
         method:"POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify({
@@ -14,7 +14,7 @@ async function cadastrando(){
 }
 
 async function consulta(){
-    const response = await fetch('http://localhost:3001/consultando',{
+    const response = await fetch('/consultando',{
         method: "POST",
         headers:{"content-type":"application/json"},
         body: JSON.stringify({
@@ -59,7 +59,7 @@ async function consulta(){
 }
 
 async function consultaDel() {
-    const response = await fetch('http://localhost:3001/consultando', {
+    const response = await fetch('/consultando', {
         method: "POST",
         headers: {"content-type":"application/json"},
         body: JSON.stringify({
@@ -99,7 +99,7 @@ async function deletando(alertt = true){
         ids.push(checkboxes[i].value);
     }
     
-    const response = await fetch('http://localhost:3001/deletando',{
+    const response = await fetch('/deletando',{
         method: "POST",
         headers:{"content-type":"application/json"},
         body: JSON.stringify({ids})
@@ -140,7 +140,7 @@ document.getElementById('deletando').onclick = async () =>{
 
 document.getElementById('editando').onclick = async () => {
     const checkbox = document.querySelector('input[type="checkbox"]:checked').value;
-    const response = await fetch('http://localhost:3001/consultando', {
+    const response = await fetch('/consultando', {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({

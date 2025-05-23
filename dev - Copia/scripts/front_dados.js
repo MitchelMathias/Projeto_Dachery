@@ -64,7 +64,7 @@ function carregarTabela(url, colunas, elementosDestino) {
 document.addEventListener('DOMContentLoaded', () => {
     // 🎂 Aniversariantes
     carregarTabela(
-        'http://localhost:3001/aniversariantes',
+        '/aniversariantes',
         [
             { titulo: 'Nome', campo: 'nome' },
             { titulo: 'Aniversário', campo: 'aniversario' }
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 🩺 Ata Médica
     carregarTabela(
-        'http://localhost:3001/ataMedica',
+        '/ataMedica',
         [
             { titulo: 'Nome', campo: 'nome' },
             { titulo: 'Vencimento', campo: 'vencimento' }
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 🏖️ Férias
     carregarTabela(
-        'http://localhost:3001/ferias',
+        '/ferias',
         [
             { titulo: 'Nome', campo: 'nome' },
             { titulo: 'Apto em', campo: 'vencimento' }
