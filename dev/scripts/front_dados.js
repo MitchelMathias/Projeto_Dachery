@@ -23,7 +23,7 @@ const estiloTabela = `
 </style>
 `;
 
-// ✅ Função genérica para gerar qualquer tabela
+// Função genérica para gerar qualquer tabela
 function gerarTabela(dados, colunas) {
     let tabela = `
     <table>
@@ -43,7 +43,7 @@ function gerarTabela(dados, colunas) {
     return tabela;
 }
 
-// 🔥 Função para carregar e preencher qualquer tipo de dado
+// Função para carregar e preencher qualquer tipo de dado
 function carregarTabela(url, colunas, elementosDestino) {
     fetch(url)
         .then(response => response.json())
@@ -60,9 +60,9 @@ function carregarTabela(url, colunas, elementosDestino) {
         .catch(error => console.error(`Erro ao carregar dados de ${url}:`, error));
 }
 
-// 🚀 Executa quando carregar a página
+// Executa quando carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-    // 🎂 Aniversariantes
+    // Aniversariantes
     carregarTabela(
         'http://localhost:3001/aniversariantes',
         [
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     );
 
-    // 🩺 Ata Médica
+    // Ata Médica
     carregarTabela(
         'http://localhost:3001/ataMedica',
         [
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     );
 
-    // 🏖️ Férias
+    // Férias
     carregarTabela(
         'http://localhost:3001/ferias',
         [

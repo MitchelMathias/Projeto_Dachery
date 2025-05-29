@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node scripts/server.js",
     "grunt": "grunt"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MitchelMathias/Projeto_Dachery.git"
   },
-  "author": "",
+  "author": "Mitchel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MitchelMathias/Projeto_Dachery/issues"

@@ -9,7 +9,6 @@
 }
 
 main {
-  height: 100vh;
   background-color: #FFFFFF;
 }
 main .lateral {
@@ -51,6 +50,9 @@ main .lateral li .hovered {
   text-decoration: none;
   color: #e4e4e4;
 }
+main .container_principal .container_principal_menor {
+  height: auto;
+}
 main .container_principal .container_principal_menor .container_dashbord {
   position: relative;
 }
@@ -58,6 +60,7 @@ main .container_principal .container_principal_menor .container_dashbord .accord
   width: 100%;
 }
 main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item {
+  padding: 0px;
   --bs-accordion-border-color: transparent;
   background-color: transparent;
   border-bottom: 1px solid black;
@@ -71,6 +74,7 @@ main .container_principal .container_principal_menor .container_dashbord .accord
   border-radius: 15px;
 }
 main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item .accordion-header button {
+  padding: 20px 0;
   background-color: transparent;
   font-size: 19px;
   margin: 10px 0;
@@ -87,7 +91,7 @@ main .container_principal .container_principal_menor .container_dashbord .accord
 main .container_principal .container_principal_menor .container_dashbord .aniversario {
   background-color: #e9ecf2;
   position: sticky;
-  top: -30%;
+  top: -5%;
   border: 5px solid #044993;
   background-color: #e9ecf2;
   border-radius: 20px;
@@ -95,17 +99,40 @@ main .container_principal .container_principal_menor .container_dashbord .aniver
 main .container_principal .container_principal_menor .container_dashbord .atas {
   background-color: #e9ecf2;
   position: sticky;
-  top: -30%;
+  top: -40%;
   border: 5px solid #044993;
   border-radius: 20px;
 }
 main .container_principal .container_principal_menor .container_dashbord .ferias {
   background-color: #e9ecf2;
   position: sticky;
-  top: -30%;
+  top: 0%;
   border: 5px solid #044993;
   background-color: #e9ecf2;
   border-radius: 20px;
+}
+main .container_principal .container_principal_menor .container_dashbord .controle {
+  height: 30vh;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body main .container_principal .container_principal_menor .container_dashbord .aniversario {
+    top: 2%;
+  }
+  body main .container_principal .container_principal_menor .container_dashbord .atas {
+    top: 2%;
+  }
+  body main .container_principal .container_principal_menor .container_dashbord .ferias {
+    top: 2%;
+  }
+}
+@media screen and (max-width: 767px) {
+  body main .container_principal .container_principal_menor .container_dashbord .aniversario {
+    top: -55%;
+  }
+  body main .container_principal .container_principal_menor .container_dashbord .atas {
+    top: -170%;
+  }
 }
 
 /*# sourceMappingURL=pag01.css.map */

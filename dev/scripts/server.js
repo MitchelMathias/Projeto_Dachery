@@ -15,6 +15,14 @@ const connection = mysql.createPool({
     connectionLimit: 10
 });
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, '..')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
+
 app.post('/email', async (req, res) => {
     try {
         const {nome,email,tel,mensagem} = req.body;
@@ -346,8 +354,6 @@ app.get('/ferias', async (req, res) => {
         res.status(500).json({ error: 'Erro ao buscar férias' });
     }
 });
-
-
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
