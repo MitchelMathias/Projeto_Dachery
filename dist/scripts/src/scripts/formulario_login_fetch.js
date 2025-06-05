@@ -2,7 +2,7 @@ document.getElementById("formulario").addEventListener("submit", async (e) => {
     e.preventDefault();
     
     alert('Enviando email');
-    const response = await fetch("@@fetch/email", {
+    const response = await fetch("/email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -19,7 +19,7 @@ document.getElementById("formulario").addEventListener("submit", async (e) => {
 document.getElementById('login_login').addEventListener('submit', async e => {
     e.preventDefault();
     try {
-        const resp = await fetch('@@fetch/login', {
+        const resp = await fetch('/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

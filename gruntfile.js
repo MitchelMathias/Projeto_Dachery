@@ -21,7 +21,7 @@ module.exports = (grunt) =>{
                     expand: true,
                     cwd: 'src/estilos/scss',
                     src: ['*.scss'],
-                    dest: 'dev/estilos',
+                    dest: 'dist/estilos',
                     ext: '.css'
                 }]
             }
@@ -33,19 +33,47 @@ module.exports = (grunt) =>{
                         { match: 'endereco_css', replacement: 'estilos/main.css' },
                         { match: 'endereco_css2', replacement: 'estilos/pag01.css' },
                         { match: 'adicionar', replacement: 'scripts/adicionar_editar_excluir.js' },
-                        { match: 'front_dados', replacement: 'scripts/front_dados.js' }
+                        { match: 'front_dados', replacement: 'scripts/front_dados.js' },
+                        { match: 'fetch', replacement: 'http://localhost:3001'}
+                    ]
+                },
+                files:[{
+                    expand:true,
+                    src:['src/**/*.html'],
+                    dest: 'dev/'
+                },
+                {
+                    expand:true,
+                    flatten:true,
+                    src:['src/scripts/**/*.js'],
+                    dest: 'dev/scripts/'
+                }]
+            },
+            dist:{
+                options:{
+                    patterns:[
+                        { match: 'endereco_css', replacement: 'estilos/main.css' },
+                        { match: 'endereco_css2', replacement: 'estilos/pag01.css' },
+                        { match: 'adicionar', replacement: 'scripts/adicionar_editar_excluir.js' },
+                        { match: 'front_dados', replacement: 'scripts/front_dados.js' },
+                        { match: 'fetch', replacement: '' }
                     ]
                 },
                 files:[{
                     expand:true,
                     flatten:true,
                     src:['src/**/*.html'],
-                    dest: 'dev/'
+                    dest: 'dist/'
+                },
+                {
+                    expand:true,
+                    src:['src/scripts/**/*.js'],
+                    dest: 'dist/scripts/'
                 }]
             },
         },
         imagemin:{
-            dynamic:{
+            dev:{
                 options:{
                     optimizationLevel:5,
                     progessive: true,
@@ -56,6 +84,19 @@ module.exports = (grunt) =>{
                     cwd: 'src/imagens',
                     src: ['**/*.{png,jpeg,jpg}'],
                     dest: 'dev/imagens'
+                }]
+            },
+            dist:{
+                options:{
+                    optimizationLevel:5,
+                    progessive: true,
+                    interlaced: true
+                },
+                files:[{
+                    expand:true,
+                    cwd: 'src/imagens',
+                    src: ['**/*.{png,jpeg,jpg}'],
+                    dest: 'dist/imagens'
                 }]
             }
         },
@@ -78,7 +119,16 @@ module.exports = (grunt) =>{
                     src: ['**/*.js'],
                     dest: 'dev/scripts/'
                 }]
-            }
+            },
+            dist:{
+                files:[{
+                    expand: true,
+                    cwd: 'src/scripts/',
+                    src: ['**/*.js'],
+                    dest: 'dist/scripts/'
+                }]
+            },
+
         },
         watch:{
             dev:{
@@ -95,4 +145,6 @@ module.exports = (grunt) =>{
     grunt.loadNpmTasks('grunt-contrib-watch')
     
     grunt.registerTask('default', ['watch'])
+    grunt.registerTask('build', ['sass:production', 'replace:dist', 'imagemin:dist', 'copy:dist'])
+    grunt.registerTask('dev', ['sass:dev', 'replace:dev', 'imagemin:dev', 'copy:dev'])
 }
