@@ -145,6 +145,6 @@ module.exports = (grunt) =>{
     grunt.loadNpmTasks('grunt-contrib-watch')
     
     grunt.registerTask('default', ['watch'])
-    grunt.registerTask('build', ['sass:production', 'replace:dist', 'imagemin:dist', 'copy:dist'])
-    grunt.registerTask('dev', ['sass:dev', 'replace:dev', 'imagemin:dev', 'copy:dev'])
+    grunt.registerTask('build', ['sass:production', 'copy:dist', 'replace:dist'])
+    grunt.registerTask('dev', ['sass:dev', 'copy:dev', 'replace:dev'])
 }
