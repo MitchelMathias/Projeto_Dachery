@@ -39,6 +39,7 @@ module.exports = (grunt) =>{
                 },
                 files:[{
                     expand:true,
+                    flatten:true,
                     src:['src/**/*.html'],
                     dest: 'dev/'
                 },
@@ -67,6 +68,7 @@ module.exports = (grunt) =>{
                 },
                 {
                     expand:true,
+                    flatten:true,
                     src:['src/scripts/**/*.js'],
                     dest: 'dist/scripts/'
                 }]
