@@ -26,6 +26,9 @@ main .lateral .lateral1 h2 a {
   text-decoration: none;
   color: #FFFFFF;
 }
+main .lateral .lateral1 .recebe {
+  overflow-x: auto;
+}
 main .lateral li {
   padding: 6px 0;
   transition: all ease 0.4s;
@@ -132,6 +135,9 @@ main .container_principal .container_principal_menor .container_dashbord .contro
   }
   body main .container_principal .container_principal_menor .container_dashbord .atas {
     top: -170%;
+  }
+  body main .container_principal .container_principal_menor .container_dashbord .accordion-flush .accordion-item .accordion-body {
+    padding: 10px 0;
   }
 }
 

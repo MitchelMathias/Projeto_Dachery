@@ -135,7 +135,7 @@ module.exports = (grunt) =>{
         watch:{
             dev:{
                 files:['src/estilos/**/*scss', 'src/**/*.html', 'src/scripts/**/*.js'],
-                tasks:['sass:dev', 'replace:dev','copy:dev']
+                tasks:['sass:dev','copy:dev' ,'replace:dev']
             }
         }
     })

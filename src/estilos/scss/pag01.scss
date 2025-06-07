@@ -30,6 +30,9 @@ main{
                     color: variaveis.$branco;
                 }
             }
+            .recebe{
+                overflow-x: auto;
+            }
         }
         border-right: 1px solid black;
         background-color: variaveis.$azul;
@@ -100,9 +103,6 @@ main{
                                 background-color: variaveis.$amarelo;
                             }
                         }
-                        .accordion-body{
-                            
-                        }
                     }
                 }
                 .aniversario{
@@ -169,6 +169,13 @@ main{
                         }
                         .atas{
                             top: -170%;
+                        }
+                        .accordion-flush{
+                            .accordion-item{
+                                .accordion-body{
+                                    padding: 10px 0;
+                                }
+                            }
                         }
                     }
                 }
