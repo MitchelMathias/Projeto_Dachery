@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos/pag01.css">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <link rel="shortcut icon" href="imagens/logo.jpg" type="image/x-icon">
     <title>Dachery</title>
 </head>
@@ -264,5 +265,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/adicionar_editar_excluir.js"></script>
     <script src="scripts/front_dados.js"></script>
+    <script>
+    // Inicializa Lenis e loop
+    const lenis = new Lenis({ smooth: true });
+    (function frame(t){ lenis.raf(t); requestAnimationFrame(frame) })();
+
+    // Scroll suave em âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(a =>
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            lenis.scrollTo(a.hash);
+        })
+    );
+
+    // Fecha dropdowns ao clicar
+    document.querySelectorAll('.dropdown-menu a').forEach(link =>
+        link.addEventListener('click', () =>
+            bootstrap.Dropdown
+                .getOrCreateInstance(link.closest('.dropdown').querySelector('[data-bs-toggle]'))
+                .hide()
+        )
+    );
+</script>
 </body>
 </html>
