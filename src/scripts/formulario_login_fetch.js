@@ -39,3 +39,5 @@ document.getElementById('login_login').addEventListener('submit', async e => {
         alert('Erro inesperado, tente novamente!!')
     }
 });
+
+

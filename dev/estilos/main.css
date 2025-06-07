@@ -6,10 +6,6 @@
   font-family: 'font-family: "Manrope", sans-serif';
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: #ffd504;
   color: white;
