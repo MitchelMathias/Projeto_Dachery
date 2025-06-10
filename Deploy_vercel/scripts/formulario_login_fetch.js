@@ -30,6 +30,7 @@ document.getElementById('login_login').addEventListener('submit', async e => {
     const data = await resp.json();
     if (data.status === 'ok'){
         alert('Login realizado com Sucesso')
+        sessionStorage.setItem('logado', 'true');
         window.location = 'pag01.html'
     }
     else{
