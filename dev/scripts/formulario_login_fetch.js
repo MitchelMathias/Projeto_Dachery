@@ -19,7 +19,7 @@ document.getElementById("formulario").addEventListener("submit", async (e) => {
 document.getElementById('login_login').addEventListener('submit', async e => {
     e.preventDefault();
     try {
-        const resp = await fetch('http://localhost:3001/login', {
+        const res = await fetch('http://localhost:3001/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -27,10 +27,11 @@ document.getElementById('login_login').addEventListener('submit', async e => {
             password: document.getElementById('password').value
         })
     });
-    const data = await resp.json();
-    if (data.status === 'ok'){
-        alert('Login realizado com Sucesso')
+    const data = await res.json();
+    if (data.length > 0) {
+        alert('Login realizado com sucesso');
         sessionStorage.setItem('logado', 'true');
+        sessionStorage.setItem('permissao', data[0].permissao);
         window.location = 'pag01.html'
     }
     else{
