@@ -13,13 +13,18 @@
 </head>
 <script>
     if(sessionStorage.getItem('logado') !== 'true') {
-    alert("Acesso negado! Redirecionando...");
-    window.location.href = 'index.html'; // Página inicial
+        alert("Acesso negado! Redirecionando...");
+        window.location.href = 'index.html'; // Página inicial
     }
+    window.addEventListener('DOMContentLoaded', () =>{
+        if (sessionStorage.getItem('permissao') == '2nivel'){
+            document.getElementById('menuLateral').style.display = 'none';
+        }
+    })
 </script>
 <body>
     <main class="row m-auto">
-        <section id="menuLateral" class="lateral col-1 col-lg-2 g-0 ps-lg-3 " tabindex="-1">
+        <section id="menuLateral" class="lateral col-1 col-lg-2 g-0 ps-lg-3" tabindex="-1">
             <div class="lateral1">
                 <h2 id="nome_usuario" class="py-3 d-none d-lg-block"><a href="index.html">Dachery</a></h2>
                 <h2 id="nome_usuario" class="py-3 d-lg-none"><img src="imagens/logo.jpg" class="img-fluid rounded-2 p-1"></h2>
