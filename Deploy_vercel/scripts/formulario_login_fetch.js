@@ -28,7 +28,7 @@ document.getElementById('login_login').addEventListener('submit', async e => {
         })
     });
     const data = await resp.json();
-    if (data.status === 'ok'){
+    if (data.length > 0){
         alert('Login realizado com Sucesso')
         sessionStorage.setItem('logado', 'true');
         sessionStorage.setItem('permissao', data[0].permissao);
