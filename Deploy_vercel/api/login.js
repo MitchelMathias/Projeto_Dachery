@@ -9,7 +9,7 @@ module.exports = (req, res) => {
             if (erro) {
                 res.status(500).json({ error: 'Erro na consulta' });
             } else if (resposta.length > 0) {
-                res.json({ status: 'ok' });
+                res.send(resposta);
             } else {
                 res.json({ status: 'nops' });
             }
