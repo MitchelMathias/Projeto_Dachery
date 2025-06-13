@@ -31,6 +31,7 @@ document.getElementById('login_login').addEventListener('submit', async e => {
     if (data.status === 'ok'){
         alert('Login realizado com Sucesso')
         sessionStorage.setItem('logado', 'true');
+        sessionStorage.setItem('permissao', data[0].permissao);
         window.location = 'pag01.html'
     }
     else{

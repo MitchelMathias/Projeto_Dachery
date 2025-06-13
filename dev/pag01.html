@@ -18,7 +18,11 @@
     }
     window.addEventListener('DOMContentLoaded', () =>{
         if (sessionStorage.getItem('permissao') == '2nivel'){
-            document.getElementById('menuLateral').style.display = 'none';
+            document.getElementById('AtasMedicasLink').style.display = 'none';
+            document.getElementById('FeriasLink').style.display = 'none';
+            document.getElementById('cadastramento').style.display = 'none';
+            document.getElementById('editamento').style.display ='none';
+            document.getElementById('exclusamento').style.display = 'none';
         }
     })
 </script>
@@ -40,7 +44,7 @@
                         <a class="hovered d-none d-lg-block" href="#">Pagina Inicial</a>
                         <a href="index.html" class="hovered d-lg-none"><i class="bi bi-house-add-fill"></i></a>
                     </li>
-                    <li class="ps-lg-3 text-center text-lg-start">
+                    <li id="cadastramento" class="ps-lg-3 text-center text-lg-start ">
                         <a class="hovered d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario">Cadastrar Usuário</a>
                         <a class="hovered d-lg-none" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario"><i class="bi bi-person-plus-fill"></i></a>
                         <section class="surgimento">
@@ -69,7 +73,7 @@
                             </div>
                         </section>
                     </li>
-                    <li class="ps-lg-3 text-center text-lg-start">
+                    <li id="editamento" class="ps-lg-3 text-center text-lg-start">
                         <a class="hovered d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#editar_usuario">Editar Usuário</a>
                         <a class="hovered d-lg-none" data-bs-toggle="modal" data-bs-target="#editar_usuario"><i class="bi bi-pencil-fill"></i></a>
                         <section class="surgimento">
@@ -94,7 +98,7 @@
                             </div>
                         </section>
                     </li>
-                    <li class="ps-lg-3 text-center text-lg-start">
+                    <li id="exclusamento" class="ps-lg-3 text-center text-lg-start">
                         <a class="hovered d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#deletar_usuario">Excluir Usuário</a>
                         <a class="hovered  d-lg-none" data-bs-toggle="modal" data-bs-target="#deletar_usuario"><i class="bi bi-trash-fill"></i></a>
                         <section class="surgimento">
@@ -277,19 +281,14 @@
     <script src="scripts/adicionar_editar_excluir.js"></script>
     <script src="scripts/front_dados.js"></script>
     <script>
-    // Inicializa Lenis e loop
     const lenis = new Lenis({ smooth: true });
     (function frame(t){ lenis.raf(t); requestAnimationFrame(frame) })();
-
-    // Scroll suave em âncoras
-    document.querySelectorAll('a[href^="#"]').forEach(a =>
-        a.addEventListener('click', e => {
-            e.preventDefault();
-            lenis.scrollTo(a.hash);
+        document.querySelectorAll('a[href^="#"]').forEach(a =>
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                lenis.scrollTo(a.hash);
         })
     );
-
-    // Fecha dropdowns ao clicar
     document.querySelectorAll('.dropdown-menu a').forEach(link =>
         link.addEventListener('click', () =>
             bootstrap.Dropdown
