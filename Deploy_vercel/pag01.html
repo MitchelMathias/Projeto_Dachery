@@ -18,7 +18,11 @@
     }
     window.addEventListener('DOMContentLoaded', () =>{
         if (sessionStorage.getItem('permissao') == '2nivel'){
-            document.getElementById('menuLateral').style.display = 'none';
+            document.getElementById('AtasMedicasLink').style.display = 'none';
+            document.getElementById('FeriasLink').style.display = 'none';
+            document.getElementById('cadastramento').style.display = 'none';
+            document.getElementById('editamento').style.display ='none';
+            document.getElementById('exclusamento').style.display = 'none';
         }
     })
 </script>
