@@ -1,4 +1,6 @@
 const connection = require('./bancodados.js');
+const nodemailer = require('nodemailer');
+
 
 module.exports = async (req, res) => {
     try {
