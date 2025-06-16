@@ -73,6 +73,7 @@ app.post('/email', async (req, res) => {
                 </table>
             </body>
             </html>
+            
         `;
 
         await transporter.sendMail({
