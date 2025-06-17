@@ -4,7 +4,7 @@ async function fetchDado() {
         const data = await res.json();
         document.getElementById('resultado').innerText = data.dado;
     } catch {
-        document.getElementById('resultado').innerText = 'Erro ao buscar';
+        document.getElementById('resultado').innerText = ;
     }
 }
 

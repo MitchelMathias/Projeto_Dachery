@@ -33,17 +33,24 @@ async function extrair() {
         await page.goto('https://cliente-frotas.conectcar.com/home', { waitUntil: 'networkidle2' });
         await page.waitForSelector('.font-bold.text-blue-4', { timeout: 15000 });
         resultado = await page.$eval('.font-bold.text-blue-4', el => el.textContent.trim());
-} catch (err) {
+
+    } catch (err) {
         console.error('Erro ao extrair:', err);
         resultado = 'Erro na extração: ' + err.message;
     } finally {
         if (browser) await browser.close();
     }
-
+    
     return resultado;
 }
 
 module.exports = async (req, res) => {
-    const dado = await extrair();
-    res.status(200).json({ dado });
+    try{
+        const dado = await extrair();
+        res.status(200).json({ dado });
+    }
+    catch{
+        console.error('Erro ao processar a requisição:', err);
+        res.status(500).json({ error: 'Erro ao processar a requisição' });
+    }
 };
