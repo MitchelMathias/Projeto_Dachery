@@ -30,6 +30,10 @@
     "grunt-replace": "^2.0.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.14.1",
-    "nodemailer": "^7.0.3"
+    "nodemailer": "^7.0.3",
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.0",
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer": "^24.10.1"
   }
 }
