@@ -1,16 +1,14 @@
-const chromium = require('chrome-aws-lambda');
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 
 async function extrair() {
     let browser = null;
     try {
         console.log('Iniciando browser...');
         browser = await puppeteer.launch({
-            args: chromium.args,
-            executablePath: await chromium.executablePath,
-            headless: chromium.headless,
-            defaultViewport: chromium.defaultViewport,
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
             ignoreHTTPSErrors: true,
+            defaultViewport: null
         });
 
         const page = await browser.newPage();

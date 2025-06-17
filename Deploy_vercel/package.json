@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/MitchelMathias/Projeto_Dachery#readme",
   "devDependencies": {
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.0",
+    "chrome-aws-lambda": "^10.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
@@ -31,9 +34,6 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.14.1",
     "nodemailer": "^7.0.3",
-    "axios": "^1.10.0",
-    "cheerio": "^1.1.0",
-    "chrome-aws-lambda": "^10.1.0",
     "puppeteer": "^24.10.1"
   }
 }
