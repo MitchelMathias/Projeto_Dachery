@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "grunt": "grunt"
+    "grunt": "grunt",
+    "postinstall": "npm i puppeteer-core chrome-aws-lambda"
   },
   "repository": {
     "type": "git",
@@ -35,5 +36,14 @@
     "mysql2": "^3.14.1",
     "nodemailer": "^7.0.3",
     "puppeteer": "^24.10.1"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.10.1"
+  },
+  "functions": {
+    "api/pedagio.js": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
   }
 }
