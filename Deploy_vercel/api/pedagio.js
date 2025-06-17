@@ -1,3 +1,4 @@
+const chromium = require('chrome-aws-lambda');
 const puppeteer = require('puppeteer-core');
 
 async function extrair() {
@@ -5,10 +6,11 @@ async function extrair() {
     try {
         console.log('Iniciando browser...');
         browser = await puppeteer.launch({
-            headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+            args: chromium.args,
+            executablePath: await chromium.executablePath,
+            headless: chromium.headless,
+            defaultViewport: chromium.defaultViewport,
             ignoreHTTPSErrors: true,
-            defaultViewport: null
         });
 
         const page = await browser.newPage();
@@ -60,5 +62,4 @@ module.exports = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Erro interno no servidor', details: error.message });
     }
-    
 };
