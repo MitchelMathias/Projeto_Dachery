@@ -39,11 +39,5 @@
   },
   "dependencies": {
     "puppeteer-core": "^24.10.1"
-  },
-  "functions": {
-    "api/pedagio.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
   }
 }
