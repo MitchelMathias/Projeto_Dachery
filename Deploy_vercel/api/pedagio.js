@@ -42,7 +42,7 @@ async function extrair() {
     return resultado;
 }
 
-exports.handler = async (req, res) => {
+exports.exports = async (req, res) => {
     const dado = await extrair();
     res.status(200).json({ dado });
 };
