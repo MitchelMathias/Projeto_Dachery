@@ -1,5 +1,5 @@
-const puppeteer = require('puppeteer-core');
 const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 
 async function extrair() {
     let browser = null;
@@ -42,7 +42,7 @@ async function extrair() {
     return resultado;
 }
 
-exports.exports = async (req, res) => {
+module.exports = async (req, res) => {
     const dado = await extrair();
     res.status(200).json({ dado });
 };
