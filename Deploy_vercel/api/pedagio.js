@@ -1,16 +1,13 @@
-const chromium = require('chrome-aws-lambda');
-const puppeteer = require('puppeteer-core');
-
-let dado = 'Extração pendente';
+const puppeteer = require('puppeteer');
 
 async function extrair() {
     let browser = null;
+    let resultado = 'Extração pendente';
+
     try {
         browser = await puppeteer.launch({
-            args: chromium.args,
-            defaultViewport: chromium.defaultViewport,
-            executablePath: await chromium.executablePath,
-            headless: chromium.headless,
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
         });
 
         const page = await browser.newPage();
@@ -30,21 +27,23 @@ async function extrair() {
         ]);
 
         await page.goto('https://cliente-frotas.conectcar.com/home', { waitUntil: 'networkidle2' });
-        await page.waitForSelector('.font-bold.text-blue-4');
-        dado = await page.$eval('.font-bold.text-blue-4', el => el.textContent.trim());
+        await page.waitForSelector('.font-bold.text-blue-4', { timeout: 15000 });
 
-        await browser.close();
-        console.log('Extração concluída:', dado);
+        resultado = await page.$eval('.font-bold.text-blue-4', el => el.textContent.trim());
     } catch (err) {
         console.error('Erro ao extrair:', err);
-        dado = err.message;
+        resultado = 'Erro na extração: ' + err.message;
+    } finally {
         if (browser !== null) await browser.close();
     }
+    
+    console.log('Resultado da extração:', resultado);
+    return resultado;
 }
 
-extrair();
-
-module.exports = async (req, res) => {
-    await extrair();
+exports.handler = async (req, res) => {
+    const dado = await extrair();
     res.status(200).json({ dado });
 };
+
+extrair()
