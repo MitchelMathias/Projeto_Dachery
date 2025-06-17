@@ -37,7 +37,7 @@ async function extrair() {
         console.log('Extração concluída:', dado);
     } catch (err) {
         console.error('Erro ao extrair:', err);
-        dado = 'Erro na extração';
+        dado = err;
         if (browser !== null) await browser.close();
     }
 }
