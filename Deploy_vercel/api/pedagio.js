@@ -47,3 +47,5 @@ module.exports = async (req, res) => {
     const dado = await extrair();
     res.status(200).json({ dado });
 };
+
+extrair()
