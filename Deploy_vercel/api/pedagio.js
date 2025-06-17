@@ -45,12 +45,6 @@ async function extrair() {
 }
 
 module.exports = async (req, res) => {
-    try{
-        const dado = await extrair();
-        res.status(200).json({ dado });
-    }
-    catch{
-        console.error('Erro ao processar a requisição:', err);
-        res.status(500).json({ error: 'Erro ao processar a requisição' });
-    }
+    const resultado = await extrair();
+    res.status(200).json({ resultado });
 };
