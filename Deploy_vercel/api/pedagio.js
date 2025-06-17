@@ -18,8 +18,10 @@ async function extrair() {
         await page.waitForSelector('.font-bold.text-blue-4');
         dado = await page.$eval('.font-bold.text-blue-4', el => el.textContent.trim());
         await browser.close();
-    } catch {
+        console.log('Extração concluída:', dado);
+    } catch (error) {
         dado = 'Erro na extração';
+        console.error('Erro na extração:', error);
     }
 }
 
@@ -29,5 +31,13 @@ setInterval(extrair, 900000);
 extrair();
 
 module.exports = async (req, res) => {
-    res.send(dado);
+    try {
+        if (!dado) {
+            return res.status(503).json({ error: 'Dado ainda não disponível' });
+        }
+        res.send(dado);
+    } catch (error) {
+        console.error('Erro no endpoint:', error);
+        res.status(500).json({ error: 'Erro interno no servidor' });
+    }
 };
