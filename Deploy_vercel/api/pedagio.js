@@ -1,4 +1,4 @@
-const chromium = require('chrome-aws-lambda');
+const chromium = require('@sparticuz/chromium');
 const puppeteer = require('puppeteer-core');
 
 async function extrair() {
@@ -8,10 +8,11 @@ async function extrair() {
     try {
         const executablePath = await chromium.executablePath;
         browser = await puppeteer.launch({
-            args: chromium.args,
+            args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
             defaultViewport: chromium.defaultViewport,
             executablePath: executablePath,
             headless: chromium.headless,
+            ignoreHTTPSErrors: true,
         });
 
         const page = await browser.newPage();
@@ -32,12 +33,11 @@ async function extrair() {
         await page.goto('https://cliente-frotas.conectcar.com/home', { waitUntil: 'networkidle2' });
         await page.waitForSelector('.font-bold.text-blue-4', { timeout: 15000 });
         resultado = await page.$eval('.font-bold.text-blue-4', el => el.textContent.trim());
-
-    } catch (err) {
+} catch (err) {
         console.error('Erro ao extrair:', err);
         resultado = 'Erro na extração: ' + err.message;
     } finally {
-        if (browser !== null) await browser.close();
+        if (browser) await browser.close();
     }
 
     return resultado;
