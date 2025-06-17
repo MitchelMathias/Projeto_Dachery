@@ -31,13 +31,6 @@ setInterval(extrair, 900000);
 extrair();
 
 module.exports = async (req, res) => {
-    try {
-        if (!dado) {
-            return res.status(503).json({ error: 'Dado ainda não disponível' });
-        }
-        res.send(dado);
-    } catch (error) {
-        console.error('Erro no endpoint:', error);
-        res.status(500).json({ error: 'Erro interno no servidor' });
-    }
+    res.send('Teste OK');
 };
+
