@@ -1,38 +1,28 @@
-const puppeteer = require('puppeteer');
-
-let dado = 'Extração pendente';
+const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 
 async function extrair() {
-    let browser;
+    let browser = null;
     try {
         console.log('Iniciando browser...');
         browser = await puppeteer.launch({
-            headless: true,
-            args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage',
-                '--single-process',
-                '--no-zygote'
-            ],
-            executablePath: process.env.CHROME_PATH || undefined,
+            args: chromium.args,
+            executablePath: await chromium.executablePath,
+            headless: chromium.headless,
+            defaultViewport: chromium.defaultViewport,
+            ignoreHTTPSErrors: true,
         });
 
         const page = await browser.newPage();
         await page.setUserAgent('Mozilla/5.0');
 
         console.log('Navegando para a página de login...');
-        await page.goto('https://auth.conectcar.com/auth/realms/Atacado/protocol/openid-connect/auth?client_id=portal-atacado-web&scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fcliente-frotas.conectcar.com%2Fapi%2Fauth%2Fcallback%2Fkeycloak&state=BYXLl_zClxVuXNnJtIap-hG9RMazGyC3Jb85z-_sWWk&code_challenge=cO4VVOMDg1QOztW3sFM_S3Qm2VHXIrKrHfk6OCVG0qI&code_challenge_method=S256', { waitUntil: 'networkidle2' });
+        await page.goto(
+            'https://auth.conectcar.com/auth/realms/Atacado/protocol/openid-connect/auth?client_id=portal-atacado-web&scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fcliente-frotas.conectcar.com%2Fapi%2Fauth%2Fcallback%2Fkeycloak&state=BYXLl_zClxVuXNnJtIap-hG9RMazGyC3Jb85z-_sWWk&code_challenge=cO4VVOMDg1QOztW3sFM_S3Qm2VHXIrKrHfk6OCVG0qI&code_challenge_method=S256',
+            { waitUntil: 'networkidle2' }
+        );
 
-        // Salvar para ver o conteúdo da página atual (ajuda para debug)
-        const html = await page.content();
-        require('fs').writeFileSync('pagina_login.html', html);
-        console.log('Página de login salva para análise.');
-
-        console.log('Esperando o campo username...');
-        await page.waitForSelector('input[name="username"]', { timeout: 5000 });
-
-        console.log('Preenchendo login...');
+        await page.waitForSelector('input[name="username"]', { timeout: 10000 });
         await page.type('input[name="username"]', 'paulo@dachery.com.br');
         await page.type('input[name="password"]', 'Dachery@123');
 
@@ -43,13 +33,17 @@ async function extrair() {
 
         console.log('Acessando home...');
         await page.goto('https://cliente-frotas.conectcar.com/home', { waitUntil: 'networkidle2' });
-        await page.waitForSelector('.font-bold.text-blue-4', { timeout: 5000 });
-        dado = await page.$eval('.font-bold.text-blue-4', el => el.textContent.trim());
+
+        await page.waitForSelector('.font-bold.text-blue-4', { timeout: 10000 });
+        const dado = await page.$eval('.font-bold.text-blue-4', el => el.textContent.trim());
+
         console.log('Extração concluída:', dado);
 
+        return dado;
+
     } catch (error) {
-        dado = 'Erro na extração';
         console.error('Erro na extração:', error);
+        throw error;
     } finally {
         if (browser) {
             await browser.close();
@@ -58,19 +52,14 @@ async function extrair() {
     }
 }
 
-// Executa a extração a cada 15 minutos (900000 ms)
-setInterval(extrair, 900000);
-// Executa uma vez na carga do módulo
-extrair();
-
 module.exports = async (req, res) => {
     try {
-        if (!dado || dado === 'Erro na extração' || dado === 'Extração pendente') {
+        const dado = await extrair();
+        if (!dado) {
             return res.status(503).json({ error: 'Dado ainda não disponível' });
         }
-        res.send(dado);
+        res.status(200).json({ dado });
     } catch (error) {
-        console.error('Erro no endpoint:', error);
-        res.status(500).json({ error: 'Erro interno no servidor' });
+        res.status(500).json({ error: 'Erro interno no servidor', details: error.message });
     }
 };
