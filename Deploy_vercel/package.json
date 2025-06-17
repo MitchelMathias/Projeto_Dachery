@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "grunt": "grunt",
-    "postinstall": "npm i puppeteer-core chrome-aws-lambda"
+    "grunt": "grunt"
   },
   "repository": {
     "type": "git",
