@@ -45,7 +45,6 @@ async function extrair() {
 extrair();
 
 module.exports = async (req, res) => {
-    // Toda vez que a rota for chamada, refaz a extração para garantir dado atualizado
     await extrair();
     res.status(200).json({ dado });
 };
