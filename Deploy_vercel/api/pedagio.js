@@ -6,10 +6,11 @@ async function extrair() {
     let resultado = 'Extração pendente';
 
     try {
+        const executablePath = await chromium.executablePath;
         browser = await puppeteer.launch({
             args: chromium.args,
             defaultViewport: chromium.defaultViewport,
-            executablePath: await chromium.executablePath || '/usr/bin/chromium-browser',
+            executablePath: executablePath || '/usr/bin/chromium-browser',
             headless: chromium.headless,
         });
 
