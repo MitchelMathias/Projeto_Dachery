@@ -16,7 +16,7 @@
     "url": "https://github.com/MitchelMathias/Projeto_Dachery/issues"
   },
   "homepage": "https://github.com/MitchelMathias/Projeto_Dachery#readme",
-  "devDependencies": {
+  "Dependencies": {
     "axios": "^1.10.0",
     "cheerio": "^1.1.0",
     "chrome-aws-lambda": "^10.1.0",
@@ -35,8 +35,5 @@
     "mysql2": "^3.14.1",
     "nodemailer": "^7.0.3",
     "puppeteer": "^24.10.1"
-  },
-  "dependencies": {
-    "puppeteer-core": "^24.10.1"
   }
 }
