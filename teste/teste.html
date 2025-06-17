@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><title>Dado</title></head>
+<body>
+    <div id="resultado">Carregando...</div>
+    <script>
+        async function fetchDado() {
+            try {
+                const res = await fetch('http://localhost:3000/dado');
+                document.getElementById('resultado').innerText = await res.text();
+            } catch {
+                document.getElementById('resultado').innerText = 'Erro ao buscar';
+            }
+        }
+        fetchDado();
+        setInterval(fetchDado, 5000);
+    </script>
+</body>
+</html>
