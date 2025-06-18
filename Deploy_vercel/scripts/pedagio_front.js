@@ -2,7 +2,6 @@ async function fetchDado() {
     try {
         const res = await fetch('/api/pedagio');
         
-        // Verificar se a resposta é JSON
         const contentType = res.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {
             const text = await res.text();
