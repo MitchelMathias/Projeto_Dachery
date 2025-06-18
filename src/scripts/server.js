@@ -1,9 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-const nodemailer = require('nodemailer');
-const mysql = require('mysql');
-const puppeteer = require('puppeteer-core');
-const chromium = require('@sparticuz/chromium');
+import express from 'express';
+import cors from 'cors';
+import nodemailer from 'nodemailer';
+import mysql from 'mysql';
+import chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer-core';
+
 
 const app = express();
 app.use(cors());

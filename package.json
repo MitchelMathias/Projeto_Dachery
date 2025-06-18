@@ -1,6 +1,7 @@
 {
   "name": "projeto_dachery",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "gruntfile.js",
   "scripts": {
