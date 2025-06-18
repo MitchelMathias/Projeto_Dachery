@@ -39,11 +39,11 @@
     "nodemailer": "^7.0.3"
   },
   "dependencies": {
-    "@sparticuz/chromium": "^137.0.1",
+    "@sparticuz/chromium": "^131.0.1",
     "axios": "^1.10.0",
     "axios-cookiejar-support": "^6.0.2",
     "cheerio": "^1.1.0",
-    "puppeteer-core": "^24.10.1",
+    "puppeteer-core": "^23.0.0",
     "tough-cookie": "^5.1.2"
   }
 }
