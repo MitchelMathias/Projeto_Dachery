@@ -9,20 +9,31 @@ async function extrair() {
         const executablePath = await chromium.executablePath;
         
         console.log('Iniciando navegador...');
-        browser = await puppeteer.launch({
-            args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
-            defaultViewport: chromium.defaultViewport,
-            executablePath: executablePath,
-            headless: chromium.headless,
-            ignoreHTTPSErrors: true,
-        });
+        // Substitua o lançamento do navegador por:
+            browser = await puppeteer.launch({
+                args: [
+                    ...chromium.args,
+                    '--disable-dev-shm-usage',
+                    '--disable-gpu',
+                    '--single-process',
+                    '--no-zygote',
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--memory-pressure-off'
+                ],
+                executablePath: process.env.IS_LOCAL 
+                    ? '/usr/bin/chromium-browser' 
+                    : await chromium.executablePath,
+                headless: 'new',  // Usar o novo headless
+                ignoreDefaultArgs: ['--disable-extensions'],
+            });
 
         const page = await browser.newPage();
         await page.setUserAgent('Mozilla/5.0');
 
         console.log('Navegando para login...');
         await page.goto('https://auth.conectcar.com/auth/realms/Atacado/protocol/openid-connect/auth?client_id=portal-atacado-web&scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fcliente-frotas.conectcar.com%2Fapi%2Fauth%2Fcallback%2Fkeycloak&state=BYXLl_zClxVuXNnJtIap-hG9RMazGyC3Jb85z-_sWWk&code_challenge=cO4VVOMDg1QOztW3sFM_S3Qm2VHXIrKrHfk6OCVG0qI&code_challenge_method=S256', {
-            waitUntil: 'networkidle2',
+            waitUntil: 'domcontentloaded',
             timeout: 60000
         });
 
@@ -72,10 +83,12 @@ module.exports = async (req, res) => {
         const resultado = await extrair();
         res.status(200).json({ resultado });
     } catch (err) {
-        console.error('Erro na API:', err);
-        res.status(500).json({ error: err.message });
+        // Garante resposta em JSON mesmo em erros
+        res.status(500).json({
+        error: "Erro interno",
+        message: err.message,
+        stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
+        });
     }
 };
-
-extrair()
 
