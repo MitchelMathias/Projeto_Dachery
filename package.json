@@ -34,6 +34,7 @@
     "grunt-replace": "^2.0.2",
     "mysql": "^2.18.1",
     "nodemailer": "^7.0.3",
+    "playwright-core": "^1.53.1",
     "puppeteer": "^24.10.1",
     "puppeteer-core": "^24.10.1"
   }
