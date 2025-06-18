@@ -38,4 +38,5 @@
     "puppeteer": "^24.10.1",
     "puppeteer-core": "^24.10.1"
   }
+  
 }
