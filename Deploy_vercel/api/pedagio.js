@@ -1,9 +1,12 @@
 const { chromium } = require('playwright-core');
-const chromiumModule = require('@sparticuz/chromium');
 
 module.exports = async (req, res) => {
     let browser;
+
     try {
+        console.log('Carregando módulo @sparticuz/chromium...');
+        const chromiumModule = await import('@sparticuz/chromium');
+
         console.log('Iniciando Chromium...');
         browser = await chromium.launch({
             executablePath: await chromiumModule.executablePath(),
