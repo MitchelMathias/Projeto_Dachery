@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
 
         console.log('Iniciando Chromium...');
         browser = await chromium.launch({
-            executablePath: chromiumModule.executablePath,
+            executablePath: await chromiumModule.executablePath(), // ✅ CORRETO
             args: chromiumModule.args,
             headless: chromiumModule.headless,
             defaultViewport: chromiumModule.defaultViewport,
