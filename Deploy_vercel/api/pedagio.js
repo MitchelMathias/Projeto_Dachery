@@ -13,7 +13,7 @@ async function extrair() {
   });
 
   // 1. Fazer login
-  await client.post('https://auth.conectcar.com/auth/realms/Atacado/login-actions/authenticate', {
+  await client.post('https://auth.conectcar.com/auth/realms/Atacado/protocol/openid-connect/auth?client_id=portal-atacado-web&scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fcliente-frotas.conectcar.com%2Fapi%2Fauth%2Fcallback%2Fkeycloak&state=NOndPnk8gasVytWxoBXMgIHhiEB_Ca2LEDYwIeU8LXM&code_challenge=p9BqLoeFBQsQP8qHL2cNddLC6aVRz2QP18S9m-fzLNA&code_challenge_method=S256', {
     username: 'paulo@dachery.com.br',
     password: 'Dachery@123'
   });
