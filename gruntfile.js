@@ -34,7 +34,8 @@ module.exports = (grunt) =>{
                         { match: 'endereco_css2', replacement: 'estilos/pag01.css' },
                         { match: 'adicionar', replacement: 'scripts/adicionar_editar_excluir.js' },
                         { match: 'front_dados', replacement: 'scripts/front_dados.js' },
-                        { match: 'fetch', replacement: 'http://localhost:3001'}
+                        { match: 'fetch', replacement: 'http://localhost:3001'},
+                        { match: 'pedagio', replacement: 'scripts/pedagio_front.js' }
                     ]
                 },
                 files:[{
@@ -57,7 +58,8 @@ module.exports = (grunt) =>{
                         { match: 'endereco_css2', replacement: 'estilos/pag01.css' },
                         { match: 'adicionar', replacement: 'scripts/adicionar_editar_excluir.js' },
                         { match: 'front_dados', replacement: 'scripts/front_dados.js' },
-                        { match: 'fetch', replacement: '' }
+                        { match: 'fetch', replacement: '' },
+                        { match: 'pedagio', replacement: 'scripts/pedagio_front.js' }
                     ]
                 },
                 files:[{

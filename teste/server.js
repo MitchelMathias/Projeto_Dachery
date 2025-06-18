@@ -5,9 +5,9 @@ const puppeteer = require('puppeteer');
 const app = express();
 app.use(cors());
 
-let dado = 'Extração pendente';
 
 async function extrair() {
+    let dado = 'Extração pendente';
     try {
         const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
         const page = await browser.newPage();
