@@ -1,29 +1,98 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
-const tough = require('tough-cookie');
+const chromium = require('@sparticuz/chromium');
+const puppeteer = require('puppeteer-core');
 
 async function extrair() {
-  const cookieJar = new tough.CookieJar();
-  const client = axios.create({
-    jar: cookieJar,
-    withCredentials: true,
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+  let browser = null;
+  let resultado = 'Extração pendente';
+
+  try {
+    const executablePath = await chromium.executablePath;
+    
+    // Configuração otimizada para Vercel
+    browser = await puppeteer.launch({
+      args: [
+        ...chromium.args,
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+        '--single-process',
+        '--no-zygote',
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--memory-pressure-off'
+      ],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: executablePath,
+      headless: chromium.headless,
+      ignoreHTTPSErrors: true,
+    });
+
+    const page = await browser.newPage();
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+
+    // Navegação com timeout reduzido
+    await page.goto('https://auth.conectcar.com/auth/realms/Atacado/protocol/openid-connect/auth?client_id=portal-atacado-web&scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fcliente-frotas.conectcar.com%2Fapi%2Fauth%2Fcallback%2Fkeycloak', {
+      waitUntil: 'domcontentloaded',
+      timeout: 30000
+    });
+
+    // Preenchimento mais robusto
+    await page.waitForSelector('input[name="username"]', {timeout: 10000});
+    await page.type('input[name="username"]', 'paulo@dachery.com.br', {delay: 50});
+    await page.type('input[name="password"]', 'Dachery@123', {delay: 50});
+    
+    // Submissão com espera inteligente
+    const navigationPromise = page.waitForNavigation({waitUntil: 'domcontentloaded', timeout: 30000});
+    await page.click('button[type="submit"]');
+    await navigationPromise;
+
+    // Acesso direto ao elemento alvo
+    await page.goto('https://cliente-frotas.conectcar.com/home', {
+      waitUntil: 'domcontentloaded',
+      timeout: 30000
+    });
+
+    // Espera flexível pelo elemento
+    await page.waitForSelector('.font-bold.text-blue-4', {
+      timeout: 10000,
+      visible: true
+    });
+    
+    resultado = await page.$eval('.font-bold.text-blue-4', el => el.textContent.trim());
+    console.log('Valor encontrado:', resultado);
+
+  } catch (err) {
+    console.error('Erro ao extrair:', err);
+    resultado = 'Erro na extração: ' + err.message;
+    
+    // Log adicional para debug
+    if (browser) {
+      const pages = await browser.pages();
+      for (const p of pages) {
+        console.log('URL da página:', p.url());
+      }
     }
-  });
-
-  // 1. Fazer login
-  await client.post('https://auth.conectcar.com/auth/realms/Atacado/protocol/openid-connect/auth?client_id=portal-atacado-web&scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fcliente-frotas.conectcar.com%2Fapi%2Fauth%2Fcallback%2Fkeycloak&state=NOndPnk8gasVytWxoBXMgIHhiEB_Ca2LEDYwIeU8LXM&code_challenge=p9BqLoeFBQsQP8qHL2cNddLC6aVRz2QP18S9m-fzLNA&code_challenge_method=S256', {
-    username: 'paulo@dachery.com.br',
-    password: 'Dachery@123'
-  });
-
-  // 2. Acessar dashboard
-  const { data } = await client.get('https://cliente-frotas.conectcar.com/home');
+  } finally {
+    if (browser) await browser.close();
+  }
   
-  // 3. Parsear HTML
-  const $ = cheerio.load(data);
-  const resultado = $('.font-bold.text-blue-4').text().trim();
-  
-  return resultado || 'Valor não encontrado';
+  return resultado;
 }
+
+module.exports = async (req, res) => {
+  try {
+    // Limitar chamadas simultâneas
+    if (global.isExtracting) {
+      return res.status(429).json({error: 'Extração em andamento'});
+    }
+    
+    global.isExtracting = true;
+    const resultado = await extrair();
+    global.isExtracting = false;
+    
+    res.status(200).json({ resultado });
+  } catch (err) {
+    global.isExtracting = false;
+    console.error('Erro na API:', err);
+    res.status(500).json({ error: err.message });
+  }
+};

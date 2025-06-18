@@ -1,33 +1,37 @@
 async function fetchDado() {
   try {
-    const res = await fetch('/api/pedagio');
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // Timeout de 10 segundos
     
-    // Verificar se a resposta é JSON
-    const contentType = res.headers.get('content-type');
-    let data;
+    const res = await fetch('/api/pedagio', {
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
     
-    if (contentType && contentType.includes('application/json')) {
-      data = await res.json();
-    } else {
-      const text = await res.text();
-      throw new Error(`Resposta inesperada: ${text.slice(0, 100)}...`);
+    // Verificação de erro HTTP
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
     }
-
-    // Exibir resultado ou erro
-    if (data.resultado) {
-      document.getElementById('resultado').innerHTML = data.resultado;
-    } else if (data.error) {
-      document.getElementById('resultado').innerHTML = 'Erro: ' + data.error;
-    } else {
-      document.getElementById('resultado').innerHTML = 'Sem resultado';
+    
+    const data = await res.json();
+    
+    // Exibição segura do resultado
+    const resultadoElement = document.getElementById('resultado');
+    if (resultadoElement) {
+      resultadoElement.textContent = data.resultado || data.error || 'Sem resultado';
     }
     
   } catch (err) {
-    document.getElementById('resultado').innerHTML = 'Erro: ' + err.message;
+    const resultadoElement = document.getElementById('resultado');
+    if (resultadoElement) {
+      resultadoElement.textContent = err.name === 'AbortError' 
+        ? 'Timeout: A requisição demorou muito'
+        : 'Erro: ' + err.message;
+    }
     console.error('Detalhes do erro:', err);
   }
 }
 
-// Iniciar e atualizar a cada 5 segundos
+// Iniciar e atualizar com intervalo maior
 fetchDado();
-setInterval(fetchDado, 5000);
+setInterval(fetchDado, 30000); // 30 segundos
