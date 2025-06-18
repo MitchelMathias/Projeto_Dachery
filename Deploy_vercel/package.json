@@ -38,7 +38,9 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.14.1",
     "nodemailer": "^7.0.3",
-    "tough-cookie": "^5.1.2",
+    "tough-cookie": "^5.1.2"
+  },
+  "dependencies": {
     "@sparticuz/chromium": "^111.0.0",
     "puppeteer-core": "^19.11.1"
   }
