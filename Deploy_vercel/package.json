@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/MitchelMathias/Projeto_Dachery#readme",
   "dependencies": {
+    "@crawlee/browser-pool": "^3.13.8",
     "@sparticuz/chromium": "^137.0.1",
     "cors": "^2.8.5",
+    "crawlee": "^3.13.8",
     "express": "^5.1.0",
     "grunt": "^1.6.1",
     "grunt-cli": "^1.5.0",
@@ -32,6 +34,7 @@
     "grunt-replace": "^2.0.2",
     "mysql": "^2.18.1",
     "nodemailer": "^7.0.3",
+    "playwright-core": "^1.53.1",
     "puppeteer": "^24.10.1",
     "puppeteer-core": "^24.10.1"
   }
