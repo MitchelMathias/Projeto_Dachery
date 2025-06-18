@@ -22,6 +22,7 @@
     "@crawlee/browser-pool": "^3.13.8",
     "@sparticuz/chromium": "^137.0.1",
     "cors": "^2.8.5",
+    "crawlee": "^3.13.8",
     "express": "^5.1.0",
     "grunt": "^1.6.1",
     "grunt-cli": "^1.5.0",
