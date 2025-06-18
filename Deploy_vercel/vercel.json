@@ -1,8 +1,12 @@
 {
     "functions": {
         "api/**.js": {
+        "runtime": "nodejs18.x",
         "maxDuration": 60,
-        "memory": 1024
+        "memory": 1024,
+        "includedFiles": [
+            "node_modules/@sparticuz/chromium/**"
+        ]
         }
     }
 }
