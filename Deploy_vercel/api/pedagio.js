@@ -6,8 +6,7 @@ async function extrair() {
     let resultado = 'Extração pendente';
 
     try {
-        // Corrigido: adicionar parênteses ()
-        const executablePath = await chromium.executablePath(); 
+        const executablePath = await chromium.executablePath;
         
         console.log('Iniciando navegador...');
         browser = await puppeteer.launch({
@@ -38,7 +37,7 @@ async function extrair() {
         ]);
 
         console.log('Navegando para dashboard...');
-        await page.goto('https://cliente-frotas.conectcar.com/home', { 
+        await page.goto('https://cliente-frotas.conectcar.com/home', {
             waitUntil: 'networkidle2',
             timeout: 60000
         });
@@ -51,7 +50,6 @@ async function extrair() {
     } catch (err) {
         console.error('Erro ao extrair:', err);
         
-        // Tente capturar screenshot se possível
         if (page) {
             try {
                 const screenshot = await page.screenshot({ encoding: 'base64' });
@@ -65,7 +63,7 @@ async function extrair() {
     } finally {
         if (browser) await browser.close();
     }
-    
+    console.log('Extração concluída, resultado:', resultado);
     return resultado;
 }
 
@@ -78,3 +76,6 @@ module.exports = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+extrair()
+
