@@ -6,7 +6,6 @@ module.exports = async (req, res) => {
     let resultado = 'Extração pendente';
 
     const crawler = new PuppeteerCrawler({
-        // Configuração do Puppeteer para Vercel
         launchContext: {
             launcher: puppeteer,
             launchOptions: {
