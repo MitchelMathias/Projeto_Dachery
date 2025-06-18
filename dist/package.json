@@ -17,6 +17,11 @@
     "url": "https://github.com/MitchelMathias/Projeto_Dachery/issues"
   },
   "homepage": "https://github.com/MitchelMathias/Projeto_Dachery#readme",
+
+  "engines": {
+    "node": ">=20.18.1"
+  },
+
   "devDependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
