@@ -21,12 +21,12 @@ module.exports = async (req, res) => {
             { waitUntil: 'networkidle' }
         );
 
-        await page.type('input[name="username"]', 'paulo@dachery.com.br');
-        await page.type('input[name="password"]', 'Dachery@123');
+        await page.fill('input[name="username"]', 'paulo@dachery.com.br');
+        await page.fill('input[name="password"]', 'Dachery@123');
 
         await Promise.all([
             page.click('button[type="submit"]'),
-            page.waitForNavigation({ waitUntil: 'networkidle' }),
+            page.waitForLoadState('networkidle'),
         ]);
 
         await page.goto('https://cliente-frotas.conectcar.com/home', { waitUntil: 'networkidle' });
@@ -34,17 +34,20 @@ module.exports = async (req, res) => {
 
         const dado = await page.textContent('.font-bold.text-blue-4');
 
-        await browser.close();
-
-        res.status(200).send(dado);
+        res.status(200).json({
+            sucesso: true,
+            dado,
+        });
 
     } catch (err) {
-        if (browser) await browser.close();
         console.error('Erro na extração:', err.stack);
+
         res.status(500).json({
             sucesso: false,
             mensagem: err.message,
             erro: err.stack,
         });
+    } finally {
+        if (browser) await browser.close();
     }
 };
