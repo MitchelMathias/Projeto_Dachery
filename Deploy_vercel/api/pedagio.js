@@ -26,7 +26,7 @@ module.exports = async (req,res) => {
             await browser.close();
         } catch (err) {
             console.error('Erro na extração:', err);
-            dado = 'Erro na extração';
+            dado = err
         }
     }
     await extrair();
