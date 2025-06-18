@@ -31,4 +31,4 @@ module.exports = async (req,res) => {
     }
     await extrair();
     res.send(dado)
-})
+}
