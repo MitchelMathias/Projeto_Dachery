@@ -30,7 +30,7 @@ async function extrair() {
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
     // Navegação com timeout reduzido
-        await page.goto('https://auth.conectcar.com/auth/realms/Atacado/protocol/openid-connect/auth?client_id=portal-atacado-web&  scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fcliente-frotas.conectcar.com%2Fapi%2Fauth%2Fcallback%2Fkeycloak', {
+        await page.goto('https://auth.conectcar.com/auth/realms/Atacado/protocol/openid-connect/auth?client_id=portal-atacado-web&scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fcliente-frotas.conectcar.com%2Fapi%2Fauth%2Fcallback%2Fkeycloak&state=Dfhzs9ANCgpbtG8iECQRM6edK3StTrGrpSmgWGVnd1s&code_challenge=2K7OXxECj2qTcsDEHt5FILKkz6PQa6MKL--K9oCPfWo&code_challenge_method=S256', {
         waitUntil: 'domcontentloaded',
         timeout: 30000
         });
