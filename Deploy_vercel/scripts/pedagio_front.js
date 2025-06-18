@@ -1,7 +1,7 @@
 async function fetchDado() {
     try {
-        const res = await fetch('/api/pedagio'); // Caminho relativo correto
-        const texto = await res.text(); // Só lê uma vez
+        const res = await fetch('/api/pedagio');
+        const texto = await res.text();
         document.getElementById('resultado').innerText = texto;
     } catch (e) {
         document.getElementById('resultado').innerText = 'Erro ao buscar';
