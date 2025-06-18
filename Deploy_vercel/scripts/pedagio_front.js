@@ -1,6 +1,6 @@
 async function fetchDado() {
     try {
-        const res = await fetch('/api/dado'); // Caminho relativo correto
+        const res = await fetch('/api/pedagio'); // Caminho relativo correto
         const texto = await res.text(); // Só lê uma vez
         document.getElementById('resultado').innerText = texto;
     } catch (e) {
