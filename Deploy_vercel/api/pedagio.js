@@ -9,17 +9,17 @@ module.exports = async (req, res) => {
 
         console.log('Iniciando Chromium...');
         browser = await chromium.launch({
-            executablePath: await chromiumModule.executablePath(),
+            executablePath: chromiumModule.executablePath,
             args: chromiumModule.args,
             headless: chromiumModule.headless,
             defaultViewport: chromiumModule.defaultViewport,
         });
         console.log('Chromium iniciado.');
 
-        const context = await browser.newContext();
+        const context = await browser.newContext({
+            userAgent: 'Mozilla/5.0'
+        });
         const page = await context.newPage();
-
-        await page.setUserAgent('Mozilla/5.0');
 
         console.log('Indo para a página de login...');
         await page.goto(
