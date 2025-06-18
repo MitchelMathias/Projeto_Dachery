@@ -17,12 +17,13 @@
     "url": "https://github.com/MitchelMathias/Projeto_Dachery/issues"
   },
   "homepage": "https://github.com/MitchelMathias/Projeto_Dachery#readme",
-
   "engines": {
     "node": "^18.0.0"
   },
-  
   "devDependencies": {
+    "axios": "^1.10.0",
+    "axios-cookiejar-support": "^6.0.2",
+    "cheerio": "^1.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
@@ -37,11 +38,8 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.14.1",
     "nodemailer": "^7.0.3",
-    "@sparticuz/chromium": "^131.0.0",
-    "axios": "^1.10.0",
-    "axios-cookiejar-support": "^6.0.2",
-    "cheerio": "^1.1.0",
-    "puppeteer-core": "^23.0.0",
-    "tough-cookie": "^5.1.2"
+    "tough-cookie": "^5.1.2",
+    "@sparticuz/chromium": "^111.0.0",
+    "puppeteer-core": "^19.11.1"
   }
 }
