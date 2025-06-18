@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
 
     try {
         console.log('Carregando módulo @sparticuz/chromium...');
-        const chromiumModule = await import('@sparticuz/chromium');
+        const { default: chromiumModule } = await import('@sparticuz/chromium');
 
         console.log('Iniciando Chromium...');
         browser = await chromium.launch({
