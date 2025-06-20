@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+.background_div {
+  background-color: #03376e;
+  border-radius: 15px;
+  border: 5px solid black;
+  color: #e4e4e4;
+}
+
 * {
   font-family: 'font-family: "Manrope", sans-serif';
   color: #333333;

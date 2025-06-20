@@ -28,7 +28,7 @@
 </script>
 <body>
     <main class="row m-auto">
-        <section id="menuLateral" class="lateral col-1 col-lg-2 g-0 ps-lg-3 " tabindex="-1">
+        <section id="menuLateral" class="lateral col-1 col-lg-2 g-0 ps-lg-3" tabindex="-1">
             <div class="lateral1">
                 <h2 id="nome_usuario" class="py-3 d-none d-lg-block"><a href="index.html">Dachery</a></h2>
                 <h2 id="nome_usuario" class="py-3 d-lg-none"><img src="imagens/logo.jpg" class="img-fluid rounded-2 p-1"></h2>
@@ -44,7 +44,7 @@
                         <a class="hovered d-none d-lg-block" href="#">Pagina Inicial</a>
                         <a href="index.html" class="hovered d-lg-none"><i class="bi bi-house-add-fill"></i></a>
                     </li>
-                    <li id="cadastramento" class="ps-lg-3 text-center text-lg-start">
+                    <li id="cadastramento" class="ps-lg-3 text-center text-lg-start ">
                         <a class="hovered d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario">Cadastrar Usuário</a>
                         <a class="hovered d-lg-none" data-bs-toggle="modal" data-bs-target="#cadastrar_usuario"><i class="bi bi-person-plus-fill"></i></a>
                         <section class="surgimento">
@@ -128,10 +128,23 @@
         </section>
         <section class="container_principal col-11 col-lg-10">
             <div class="titulo">
-                <h2 class="p-3"><i class="bi bi-gear-fill me-2"></i>Dashboard</h2>
+                <h2 class="p-3"><i class="bi bi-gear-fill me-2 row m-auto"></i>Dashboard</h2>
+                <div class="row m-auto">
+                    <div class="col-4 text-center">
+                    <div class="background_div p-2" >
+                        <h4>Saldo Connect Car</h4>
+                        <h5 id="resultado">Pedagio</h5>
+                    </div>
+                </div>
+                <div class="col-4 text-center">
+                    <div class="background_div p-2">Usd do dia</div>
+                </div>
+                <div class="col-4 text-center">
+                    <div class="background_div p-2">Clima</div>
+                </div>
+                </div>
                 <hr>
             </div>
-            <div id="resultado">Pedagio</div>
             <section class="container_principal_menor">
                 <article class="container_dashbord row m-auto">
                     <section id="AniversariantesLink" class="aniversario foto_accordion row m-auto align-items-center my-md-5 p-0 p-md-3 py-3 py-3">
@@ -282,19 +295,14 @@
     <script src="scripts/adicionar_editar_excluir.js"></script>
     <script src="scripts/front_dados.js"></script>
     <script>
-    // Inicializa Lenis e loop
     const lenis = new Lenis({ smooth: true });
     (function frame(t){ lenis.raf(t); requestAnimationFrame(frame) })();
-
-    // Scroll suave em âncoras
-    document.querySelectorAll('a[href^="#"]').forEach(a =>
-        a.addEventListener('click', e => {
-            e.preventDefault();
-            lenis.scrollTo(a.hash);
+        document.querySelectorAll('a[href^="#"]').forEach(a =>
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                lenis.scrollTo(a.hash);
         })
     );
-
-    // Fecha dropdowns ao clicar
     document.querySelectorAll('.dropdown-menu a').forEach(link =>
         link.addEventListener('click', () =>
             bootstrap.Dropdown

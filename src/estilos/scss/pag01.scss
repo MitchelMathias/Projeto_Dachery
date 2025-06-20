@@ -7,6 +7,10 @@
     color: variaveis.$cinza;
 }
 
+.background_div{
+    @include background_div();
+}
+
 *{
     font-family: variaveis.$fonte;
     color: variaveis.$cor_font;
