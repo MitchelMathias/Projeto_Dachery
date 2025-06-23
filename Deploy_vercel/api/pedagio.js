@@ -2,7 +2,6 @@ const { chromium } = require('playwright-core');
 
 module.exports = async (req, res) => {
     let browser;
-
     try {
         console.log('Carregando módulo @sparticuz/chromium...');
         const { default: chromiumModule } = await import('@sparticuz/chromium');
@@ -11,33 +10,18 @@ module.exports = async (req, res) => {
         browser = await chromium.launch({
             executablePath: await chromiumModule.executablePath(),
             args: [
-                ...chromiumModule.args,
-                '--disable-dev-shm-usage',
-                '--disk-cache-size=0',
-                '--media-cache-size=0',
-                '--disable-application-cache',
-                '--disable-cache',
-                '--disable-gpu',
                 '--no-sandbox',
-                '--disable-software-rasterizer',
-                '--disable-extensions',
-                '--disable-sync',
-                '--disable-translate',
-                '--disable-background-networking',
-                '--disable-default-apps',
-                '--mute-audio',
-                '--hide-scrollbars',
-                '--headless=new'
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--single-process',
+                '--disable-gpu',
             ],
             headless: true,
             timeout: 60000,
         });
         console.log('Chromium iniciado.');
 
-        const context = await browser.newContext({
-            userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/110.0.0.0 Safari/537.36',
-        });
-        const page = await context.newPage();
+        const page = await browser.newPage();
 
         console.log('Indo para a página de login...');
         await page.goto(
@@ -48,6 +32,7 @@ module.exports = async (req, res) => {
 
         console.log('Preenchendo username...');
         await page.fill('input[name="username"]', 'paulo@dachery.com.br');
+
         console.log('Preenchendo password...');
         await page.fill('input[name="password"]', 'Dachery@123');
 
@@ -59,7 +44,7 @@ module.exports = async (req, res) => {
         console.log('Login realizado, indo para home...');
 
         await page.goto('https://cliente-frotas.conectcar.com/home', {
-            waitUntil: 'networkidle',
+            waitUntil: 'domcontentloaded',
             timeout: 30000
         });
 
@@ -70,12 +55,13 @@ module.exports = async (req, res) => {
         const dado = await page.textContent('.font-bold.text-blue-4');
         console.log('Dado extraído:', dado);
 
+        await page.close();
         await browser.close();
-        res.status(200).json({ sucesso: true, dado });
+
+        res.status(200).json({ dado });
     } catch (err) {
         console.error('Erro na extração:', err.stack);
         if (browser) await browser.close();
         res.status(500).json({ sucesso: false, mensagem: err.message, erro: err.stack });
     }
-    
 };
